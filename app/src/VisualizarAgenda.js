@@ -1,9 +1,9 @@
 import react from 'react';
 
-function Home() {
+function Pagina1() {
     return (
         <div>
-            Home
+            
         </div>
     );
-} export default Home;
+} export default Pagina1;
