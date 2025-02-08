@@ -14,7 +14,7 @@ function App() {
             avaliar
             - cliente
             - massagista
-            - gerente
+            - gerentee
 
             editar massagistas
             - gerente
