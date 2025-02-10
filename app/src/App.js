@@ -1,20 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './Home';
+import Header from './componentes/Header';
+import SideBar from './componentes/SideBar';
+import Signin from './paginas/Signin';
+import Login from './paginas/Login';
+
 
 function App() {
   return (
     <Router>
-      <div>
-        <div>
+      <div className='app'>
+        <SideBar/>
+        <div className='main-content'>
+          <Header/>
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Signin/>} />
+            <Route path="/login" element={<Login/>} />
             /*
             avaliar
             - cliente
             - massagista
-            - gerentee
+            - gerente
 
             editar massagistas
             - gerente
@@ -23,7 +30,7 @@ function App() {
             - cliente
             */
           </Routes>
-        </div>
+          </div>
       </div>
 
     </Router>
