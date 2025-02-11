@@ -1,69 +1,90 @@
 import React, { useState } from "react";
-
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 function VisualizarAgenda() {
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDay, setSelectedDay] = useState(null);
+    const [selectedDay, setSelectedDay] = useState(null);
 
-  // Função para mudar de mês
-  const changeMonth = (direction) => {
-    setCurrentDate(new Date(currentDate.setMonth(currentDate.getMonth() + direction)));
-  };
+    const generateCalendar = (monthOffset) => {
+        // Definindo janeiro de 2025 como data inicial
+        const startDate = new Date(2025, 0); // Janeiro de 2025
+        startDate.setMonth(startDate.getMonth() + monthOffset);
+        const startDay = new Date(startDate.getFullYear(), startDate.getMonth(), 1).getDay();
+        const daysInMonth = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0).getDate();
 
-  // Função para gerar o calendário
-  const generateCalendar = () => {
-    const startDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
-    const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+        let days = [];
+        let dayCounter = 1;
 
-    let days = [];
-    let dayCounter = 1;
+        for (let i = 0; i < startDay; i++) {
+            days.push(<div className="calendar-day empty" key={`empty-${i}`} />);
+        }
 
-    // Preenche as células vazias antes do primeiro dia do mês
-    for (let i = 0; i < startDay; i++) {
-      days.push(<div className="calendar-day empty" key={`empty-${i}`} />);
-    }
+        for (let i = startDay; i < startDay + daysInMonth; i++) {
+            days.push(
+                <div
+                    className="calendar-day"
+                    key={`day-${dayCounter}`}
+                    onClick={() => setSelectedDay(dayCounter)}
+                >
+                    {dayCounter}
+                </div>
+            );
+            dayCounter++;
+        }
 
-    // Preenche os dias do mês
-    for (let i = startDay; i < startDay + daysInMonth; i++) {
-      days.push(
-        <div
-          className="calendar-day"
-          key={`day-${dayCounter}`}
-          onClick={() => setSelectedDay(dayCounter)} // Marca o dia selecionado
-        >
-          {dayCounter}
+        return days;
+    };
+
+    const getMonthName = (monthIndex) => {
+        const monthNames = [
+            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        ];
+        return monthNames[monthIndex];
+    };
+
+    const generateMonthData = () => {
+        const months = [];
+        const startDate = new Date(2025, 0); // Começando de janeiro de 2025
+
+        for (let i = 0; i < 12; i++) {
+            const nextMonth = new Date(startDate.getFullYear(), startDate.getMonth() + i);
+            const monthIndex = nextMonth.getMonth();
+            const year = nextMonth.getFullYear();
+
+            months.push({
+                index: monthIndex,
+                year: year,
+                name: getMonthName(monthIndex),
+                offset: i
+            });
+        }
+        months.sort((a, b) => a.offset - b.offset);
+        return months;
+    };
+
+    return (
+        <div className="calendar-container">
+            {generateMonthData().map((monthData) => (
+                <div className="calendar" key={monthData.index}>
+                    <h3>{`${monthData.name} de ${monthData.year}`}</h3>
+                    <div className="calendar-grid">
+                        <div className="calendar-day-name">Dom</div>
+                        <div className="calendar-day-name">Seg</div>
+                        <div className="calendar-day-name">Ter</div>
+                        <div className="calendar-day-name">Qua</div>
+                        <div className="calendar-day-name">Qui</div>
+                        <div className="calendar-day-name">Sex</div>
+                        <div className="calendar-day-name">Sáb</div>
+                        {generateCalendar(monthData.offset)}
+                    </div>
+                </div>
+            ))}
+
+           
+
         </div>
-      );
-      dayCounter++;
-    }
-
-    return days;
-  };
-
-  return (
-    <div className="calendar-container">
-      <div className="calendar-header">
-        <button className="nav-button" onClick={() => changeMonth(-1)}>{"<"}</button>
-        <h2>{currentDate.toLocaleString("pt-BR", { month: "long", year: "numeric" })}</h2>
-        <button className="nav-button" onClick={() => changeMonth(1)}>{">"}</button>
-      </div>
-      <div className="calendar-grid">
-        <div className="calendar-day-name">Dom</div>
-        <div className="calendar-day-name">Seg</div>
-        <div className="calendar-day-name">Ter</div>
-        <div className="calendar-day-name">Qua</div>
-        <div className="calendar-day-name">Qui</div>
-        <div className="calendar-day-name">Sex</div>
-        <div className="calendar-day-name">Sáb</div>
-        {generateCalendar()}
-      </div>
-      {selectedDay && (
-        <div className="selected-day-info">
-          <p>Você selecionou: {selectedDay}</p>
-        </div>
-      )}
-    </div>
-  );
+    );
 }
 
 export default VisualizarAgenda;

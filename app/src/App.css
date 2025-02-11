@@ -7,15 +7,17 @@
 
 .app {
   display: flex;
-  height: 100vh;
-  background-color: #f5f0ff;
+  min-height: 100vh;
+  max-height: fit-content;
+  background-color: #ffffff;
 }
 
+/* Menu lateral */
 .sidebar {
   width: 60px;
   height: 100vh;
   display: flex;
-  background-color: #e1c6f2;
+  background-color: #b17fd4;
   flex-direction: column;
   padding: 10px;
   transition: width 0.3s;
@@ -28,7 +30,7 @@
   font-size: 25px;
   color: white;
   cursor: pointer;
-  padding: 0 7px;
+  padding: 0px 7px;
 }
 
 nav {
@@ -66,7 +68,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-  background-color: #e2aadf;
+  background-color: #a06dc4;
   transition: 0.3s;
 }
 
@@ -89,83 +91,8 @@ nav ul li a {
   font-weight: bold;
   margin-bottom: 20px;
   color: #ffffff; /*cor dos titulos*/
-  background-color: #f0d6f7;
+  background-color: #c38de9;
   padding: 10px;
-}
-
-.relatorio-container {
-  width: 80%;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #f9e6fd;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-h2 {
-  color: #9e66d1;
-  margin-bottom: 15px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-th, td {
-  padding: 10px;
-  border: 1px solid #e2aadf;
-  font-size: 16px;
-}
-
-th {
-  background-color: #e1c6f2;
-  color: white;
-}
-
-td {
-  background-color: #ffffff;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f6e4fd;
-}
-
-@media (max-width: 600px) {
-  .relatorio-container {
-    width: 95%;
-    padding: 10px;
-  }
-
-  th, td {
-    padding: 8px;
-    font-size: 14px;
-  }
-}
-
-.botao-enviar {
-  background-color: #e1c6f2;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 20px;
-  display: inline-block;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.botao-enviar:hover {
-  background-color: #d58fd7;
-  transform: scale(1.05);
 }
 
 .calendar-container {
@@ -205,30 +132,140 @@ h2 {
   color: #9e66d1;
 }
 
+.relatorio-container {
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #c38de9;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #e2aadf;
+  font-size: 16px;
+}
+
+th {
+  background-color: #e3bbff;
+  color: white;
+}
+
+td {
+  background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f6e4fd;
+}
+
+@media (max-width: 600px) {
+  .relatorio-container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+.botao-enviar {
+  background-color: #e3bbff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+  display: inline-block;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.botao-enviar:hover {
+  background-color: #d1a4f1;
+  transform: scale(1.05);
+}
+
+/* Calendário geral */
+.calendar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #c38de9;
+}
+
+.calendar {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 360px;
+  height: 300px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h3 {
+  color: #9e66d1;
+  margin-bottom: 10px;
+}
+
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  text-align: center;
+  grid-gap: 5px;
+  margin-top: 10px;
 }
 
 .calendar-day-name {
   font-weight: bold;
   color: #9e66d1;
-  font-size: 18px;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
 }
 
 .calendar-day {
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
+  font-size: 14px;
   transition: background-color 0.3s;
-  color: #555555;
-  font-size: 18px;
+  box-sizing: border-box;
 }
 
 .calendar-day:hover {
@@ -239,13 +276,253 @@ h2 {
   background-color: transparent;
 }
 
-.calendar-day.selected {
-  background-color: #d58fd7;
+.selected-day-info {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #9e66d1;
+  text-align: center;
+}
+.calendar {
+  transition: transform 0.2s ease-in-out; 
+}
+.calendar:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+}
+
+
+/* Estilo para as páginas de autenticação */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.auth-form {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form h2 {
+  font-size: 24px;
+  color: #9e66d1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.auth-form input,
+.auth-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.auth-form input[type="submit"],
+.auth-form button {
+  background-color: #9e66d1;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.auth-form input[type="submit"]:hover,
+.auth-form button:hover {
+  background-color: #7a48a6;
+}
+
+/* Link de navegação */
+.auth-form p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.auth-form a {
+  color: #9e66d1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-form a:hover {
+  text-decoration: underline;
+}
+
+.auth-form select {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.auth-form .role-select {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+/* Estilo do componente Avaliar */
+.avaliar-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #c38de9;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
   color: white;
 }
 
-.selected-day-info {
+/* Título da Avaliação */
+.avaliar-container h2 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Contêiner das estrelas */
+/* Estilo para as estrelas interativas */
+.estrelas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.estrelas .estrela {
+  font-size: 40px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.estrelas .estrela.selected {
+  color: #f39c12;  /* Cor das estrelas selecionadas */
+}
+
+.estrelas .estrela:hover {
+  color: #f39c12;  /* Cor da estrela ao passar o mouse */
+}
+
+/* Informações do massagista e tipo de massagem */
+.informacoes-avaliacao {
+  margin-bottom: 20px;
+}
+
+.informacoes-avaliacao p {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* Área para escrever opinião */
+.opiniao-container {
   margin-top: 20px;
-  font-size: 22px;
+}
+
+.opiniao-container textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Botão de Envio */
+.botao-avaliacao {
+  background-color: #e3bbff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+  display: inline-block;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.botao-avaliacao:hover {
+  background-color: #d1a4f1;
+  transform: scale(1.05);
+}
+
+.payment-container {
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f9e6fd;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.payment-success h2 {
+  font-size: 24px;
   color: #9e66d1;
+  margin-bottom: 20px;
+}
+
+.payment-form .form-group {
+  margin-bottom: 20px;
+}
+
+.payment-form .form-group label {
+  font-size: 16px;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.payment-form .input-field {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.payment-form button {
+  background-color: #9e66d1;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.payment-form button:hover {
+  background-color: #7a48a6;
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function Relatorio() {
     return (
         <div className="relatorio-container">
@@ -16,7 +15,7 @@ function Relatorio() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>João Silva</td><td>Massagem Relaxante</td><td>R$ 120,00</td><td>10/02/2025</td><td>14:00</td></tr>
+                    <tr><td>Igor Silva</td><td>Massagem Relaxante</td><td>R$ 120,00</td><td>10/02/2025</td><td>14:00</td></tr>
                     <tr><td>Ana Souza</td><td>Massagem Terapêutica</td><td>R$ 150,00</td><td>11/02/2025</td><td>09:30</td></tr>
                     <tr><td>Pedro Santos</td><td>Reflexologia</td><td>R$ 90,00</td><td>12/02/2025</td><td>16:00</td></tr>
                     <tr><td>Mariana Costa</td><td>Massagem com Pedras Quentes</td><td>R$ 180,00</td><td>13/02/2025</td><td>11:00</td></tr>
@@ -32,9 +31,9 @@ function Relatorio() {
                     <tr><td>Patrícia Gomes</td><td>Massagem Reflexologia</td><td>R$ 100,00</td><td>23/02/2025</td><td>14:45</td></tr>
                     <tr><td>Rodrigo Alves</td><td>Massagem Terapêutica</td><td>R$ 145,00</td><td>24/02/2025</td><td>16:15</td></tr>
                     <tr><td>Beatriz Ramos</td><td>Massagem com Aromaterapia</td><td>R$ 175,00</td><td>25/02/2025</td><td>10:30</td></tr>
-                  
                 </tbody>  
-            </table><button className="botao-enviar">Enviar</button>
+            </table>
+            <button className="botao-enviar">Enviar</button>
         </div>
     );
 }
