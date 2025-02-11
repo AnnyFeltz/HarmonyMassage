@@ -139,7 +139,7 @@ h2 {
   padding: 20px;
   background: #c38de9;
   border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 14px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -288,6 +288,144 @@ h3 {
 .calendar:hover {
   transform: scale(1.05); 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+}
+/* agendaR  */
+.agendar-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #c38de9;
+  border-radius: 10px;
+  box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Título */
+.agendar-container h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Calendário */
+.agendar-calendar {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.agendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Nomes dos dias da semana */
+.agendar-day-name {
+  font-weight: bold;
+  color: #7a3db8;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+
+}
+
+/* Estilo dos dias do calendário */
+.agendar-day {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  transition: 0.3s;
+  cursor: pointer;
+}
+/*tesyta*/
+.agendar-container p {
+  font-weight: 10px;
+  color: #000000;
+  line-height: 1.6;
+  margin: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.agendar-container .selected-day-info p {
+  font-size: 18px;
+  color: #000000;
+  font-weight: 10px;
+  margin: 10px 0;
+}
+
+.agendar-days-list li {
+  cursor: pointer;
+  padding: 5px 0;
+  font-size: 14px;
+  color: #000000;
+}
+
+.agendar-days-list li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Dias disponíveis para agendamento */
+.agendar-day.available {
+  background: #7a3db8;
+  color: #ffffff;
+}
+
+.agendar-day.available:hover {
+  background: #5e2ea8;
+}
+
+/* Dias vazios (antes do início do mês) */
+.agendar-day.empty {
+  background: transparent;
+  cursor: default;
+}
+
+/* Lista de dias disponíveis */
+.agendar-days-list {
+  margin-top: 20px;
+  list-style: none;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.agendar-days-list li {
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.agendar-days-list li:hover {
+  background: #e0b3ff;
+}
+
+/* Botão de confirmação */
+.agendar-button {
+  background: #7a3db8;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.agendar-button:hover {
+  background: #5e2ea8;
 }
 
 

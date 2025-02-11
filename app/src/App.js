@@ -12,6 +12,7 @@ import EfetuarPagamento from './paginas/EfetuarPagamento';
 import VisualizarAgenda from './paginas/VisualizarAgenda';
 import EditarConta from './paginas/EditarConta';
 import Agendamento from './paginas/Agendamento';
+import AgendarConsulta from './paginas/AgendarConsulta';
 import EditarMassagista from './paginas/EditarMassagista';
 import Avaliar from './paginas/Avaliar';
 import Home from './paginas/Home';
@@ -34,6 +35,7 @@ function App() {
           <Route path="/efetuar-pagamento" element={<EfetuarPagamento />} />
           <Route path="/relatorio" element={<Relatorio />} />
           <Route path="/visualizar-agenda" element={<VisualizarAgenda />} />
+          <Route path="/agendar/janeiro" element={<AgendarConsulta />} />
           <Route path="/avaliar" element={<Avaliar />} />
           <Route path="/agendamento" element={<Agendamento />} />
           <Route path="/editar-massagista" element={<EditarMassagista />} />

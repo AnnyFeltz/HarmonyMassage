@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import Calendar from 'react-calendar';
+import { Link } from "react-router-dom";
 import 'react-calendar/dist/Calendar.css';
 
 function VisualizarAgenda() {
     const [selectedDay, setSelectedDay] = useState(null);
 
     const generateCalendar = (monthOffset) => {
-        // Definindo janeiro de 2025 como data inicial
-        const startDate = new Date(2025, 0); // Janeiro de 2025
+        const startDate = new Date(2025, 0);
         startDate.setMonth(startDate.getMonth() + monthOffset);
         const startDay = new Date(startDate.getFullYear(), startDate.getMonth(), 1).getDay();
         const daysInMonth = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0).getDate();
@@ -45,7 +44,7 @@ function VisualizarAgenda() {
 
     const generateMonthData = () => {
         const months = [];
-        const startDate = new Date(2025, 0); // Começando de janeiro de 2025
+        const startDate = new Date(2025, 0);
 
         for (let i = 0; i < 12; i++) {
             const nextMonth = new Date(startDate.getFullYear(), startDate.getMonth() + i);
@@ -59,7 +58,6 @@ function VisualizarAgenda() {
                 offset: i
             });
         }
-        months.sort((a, b) => a.offset - b.offset);
         return months;
     };
 
@@ -78,11 +76,23 @@ function VisualizarAgenda() {
                         <div className="calendar-day-name">Sáb</div>
                         {generateCalendar(monthData.offset)}
                     </div>
+
+                    {monthData.index === 0 && (
+                        <Link
+                            to="/agendar/janeiro"
+                            style={{ 
+                                position: "absolute", 
+                                opacity: 0, 
+                                pointerEvents: "auto", // Permite clicar no link invisível
+                                width: "100%", 
+                                height: "100%" 
+                            }}
+                        >
+                            Ver Dias Disponiveis
+                        </Link>
+                    )}
                 </div>
             ))}
-
-           
-
         </div>
     );
 }
