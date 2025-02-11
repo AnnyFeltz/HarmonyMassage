@@ -1,74 +1,76 @@
-*{
-  margin: 0px;
-  padding: 0px;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
-.app{
+.app {
   display: flex;
   height: 100vh;
-  background-color: #e8f5e9;
+  background-color: #f5f0ff;
 }
 
-.sidebar{
+.sidebar {
   width: 60px;
   height: 100vh;
   display: flex;
-  background-color: #7ebe7e;
+  background-color: #e1c6f2;
   flex-direction: column;
   padding: 10px;
   transition: width 0.3s;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  overflow-y: auto;
 }
 
-.menu-icon{
+.menu-icon {
   font-size: 25px;
   color: white;
   cursor: pointer;
-  padding: 0px 7px;
+  padding: 0 7px;
 }
 
-nav{
+nav {
   width: 100%;
   transition: opacity 0.3s, visibility 0.3s;
 }
 
-.menu-escondido{
+.menu-escondido {
   opacity: 0;
   visibility: hidden;
   height: 0;
   overflow: hidden;
 }
 
-.menu-visivel{
+.menu-visivel {
   opacity: 1;
   visibility: visible;
   height: auto;
 }
 
-.sidebar.aberto{
+.sidebar.aberto {
   width: fit-content;
 }
 
-nav ul{
+nav ul {
   list-style: none;
-  padding: 0px;
+  padding: 0;
   text-align: left;
   width: 100%;
 }
 
-nav ul li{
-  margin: 15px 0px;
+nav ul li {
+  margin: 15px 0;
   border-radius: 20px 0px;
 }
 
-nav ul li:hover{
-  background-color: #4a7c4a;
+nav ul li:hover {
+  background-color: #e2aadf;
   transition: 0.3s;
 }
 
-nav ul li a{
+nav ul li a {
   text-decoration: none;
   color: white;
   font-size: 18px;
@@ -76,17 +78,174 @@ nav ul li a{
   padding: 10px;
 }
 
-.main-content{
+.main-content {
   flex: 1;
   text-align: center;
   font-size: 18px;
 }
 
-.header{
+.header {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #4a7c4a;
-  background-color: #8ee98e;
+  color: #ffffff; /*cor dos titulos*/
+  background-color: #f0d6f7;
   padding: 10px;
+}
+
+.relatorio-container {
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9e6fd;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #9e66d1;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #e2aadf;
+  font-size: 16px;
+}
+
+th {
+  background-color: #e1c6f2;
+  color: white;
+}
+
+td {
+  background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f6e4fd;
+}
+
+@media (max-width: 600px) {
+  .relatorio-container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+.botao-enviar {
+  background-color: #e1c6f2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+  display: inline-block;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.botao-enviar:hover {
+  background-color: #d58fd7;
+  transform: scale(1.05);
+}
+
+.calendar-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.nav-button {
+  background-color: #e1c6f2;
+  border: none;
+  padding: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #d58fd7;
+}
+
+h2 {
+  font-size: 24px;
+  color: #9e66d1;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.calendar-day-name {
+  font-weight: bold;
+  color: #9e66d1;
+  font-size: 18px;
+}
+
+.calendar-day {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #555555;
+  font-size: 18px;
+}
+
+.calendar-day:hover {
+  background-color: #f6e4fd;
+}
+
+.calendar-day.empty {
+  background-color: transparent;
+}
+
+.calendar-day.selected {
+  background-color: #d58fd7;
+  color: white;
+}
+
+.selected-day-info {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #9e66d1;
 }

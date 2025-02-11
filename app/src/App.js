@@ -13,6 +13,7 @@ import EditarConta from './paginas/EditarConta';
 
 
 
+
 function App() {
   return (
     <Router>
@@ -28,6 +29,7 @@ function App() {
             <Route path="/efetuar-pagamento" element={<EfetuarPagamento/>} />
             <Route path="/relatorio" element={<Relatorio/>} />
             <Route path="/visualizar-agenda" element={<VisualizarAgenda/>} />
+          
             /*
             avaliar
             - cliente
