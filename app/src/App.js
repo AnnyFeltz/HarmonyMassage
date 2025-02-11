@@ -5,6 +5,12 @@ import Header from './componentes/Header';
 import SideBar from './componentes/SideBar';
 import Signin from './paginas/Signin';
 import Login from './paginas/Login';
+import EditarAgenda from './paginas/EditarAgenda';
+import Relatorio from './paginas/Relatorio';
+import EfetuarPagamento from './paginas/EfetuarPagamento';
+import VisualizarAgenda from './paginas/VisualizarAgenda';
+import EditarConta from './paginas/EditarConta';
+
 
 
 function App() {
@@ -17,6 +23,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Signin/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/editar-agenda" element={<EditarAgenda/>} />
+            <Route path="/editar-conta" element={<EditarConta/>} />
+            <Route path="/efetuar-pagamento" element={<EfetuarPagamento/>} />
+            <Route path="/relatorio" element={<Relatorio/>} />
+            <Route path="/visualizar-agenda" element={<VisualizarAgenda/>} />
             /*
             avaliar
             - cliente

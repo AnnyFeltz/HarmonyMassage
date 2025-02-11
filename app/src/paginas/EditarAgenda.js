@@ -1,9 +1,9 @@
 import react from 'react';
 
-function EditaAgenda() {
+function EditarAgenda() {
     return (
         <div>
             
         </div>
     );
-} export default EditaAgenda;
+} export default EditarAgenda;

@@ -15,9 +15,12 @@ function SideBar() {
             </div>
                 <nav className={menuAberto?"menu-visivel":"menu-escondido"}>
                     <ul>
-                        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-                        <li><Link to="/Agenda" onClick={toggleMenu}>Agenda</Link></li>
-                        <li><Link to="/Relatorio" onClick={toggleMenu}>Relatorio</Link></li>
+                        <li><Link to="/home" onClick={toggleMenu}>Home</Link></li>
+                        <li><Link to="/editar-agenda" onClick={toggleMenu}>Editar Agenda</Link></li>
+                        <li><Link to="/editar-conta" onClick={toggleMenu}>Editar Conta</Link></li>
+                        <li><Link to="/relatorio" onClick={toggleMenu}>Relatorio</Link></li>
+                        <li><Link to="/efetuar-pagamento" onClick={toggleMenu}>Efetuar Pagamento</Link></li>
+                        <li><Link to="/visualizar-agenda" onClick={toggleMenu}>Visualizar Agenda</Link></li>
                     </ul>
                 </nav>
         </div>
