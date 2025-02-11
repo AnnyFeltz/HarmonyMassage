@@ -11,10 +11,10 @@ import Relatorio from './paginas/Relatorio';
 import EfetuarPagamento from './paginas/EfetuarPagamento';
 import VisualizarAgenda from './paginas/VisualizarAgenda';
 import EditarConta from './paginas/EditarConta';
-import AgendarConsulta from './AgendarConsulta';
 import Agendamento from './paginas/Agendamento';
 import EditarMassagista from './paginas/EditarMassagista';
 import Avaliar from './paginas/Avaliar';
+import Home from './paginas/Home';
 
 function App() {
   const location = useLocation();
@@ -27,6 +27,7 @@ function App() {
         {!isAuthPage && <Header />}
         <Routes>
           <Route path="/" element={<Signin />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/editar-agenda" element={<EditarAgenda />} />
           <Route path="/editar-conta" element={<EditarConta />} />
