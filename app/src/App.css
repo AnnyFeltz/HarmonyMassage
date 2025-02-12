@@ -294,36 +294,31 @@ h3 {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #c38de9; /* Roxo claro */
-  border-radius: 15px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  background-color: #c38de9;
+  border-radius: 10px;
+  box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
 }
 
 /* Título */
 .agendar-container h2 {
   color: #ffffff;
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 /* Calendário */
 .agendar-calendar {
   background: #ffffff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: inline-block;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .agendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  margin-top: 15px;
-  justify-items: center;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .agendar-day-name {
@@ -332,6 +327,7 @@ h3 {
   font-size: 16px;
   text-align: center;
   padding: 5px;
+
 }
 
 .agendar-day {
@@ -344,8 +340,33 @@ h3 {
   font-weight: bold;
   font-size: 14px;
   color: #333;
-  transition: background 0.3s, transform 0.3s;
+  transition: 0.3s;
   cursor: pointer;
+}
+.agendar-container p {
+  font-weight: 10px;
+  color: #000000;
+  line-height: 1.6;
+  margin: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.agendar-container .selected-day-info p {
+  font-size: 18px;
+  color: #000000;
+  font-weight: 10px;
+  margin: 10px 0;
+}
+
+.agendar-days-list li {
+  cursor: pointer;
+  padding: 5px 0;
+  font-size: 14px;
+  color: #000000;
+}
+
+.agendar-days-list li:hover {
+  background-color: #f0f0f0;
 }
 
 .agendar-day.available {
@@ -355,13 +376,6 @@ h3 {
 
 .agendar-day.available:hover {
   background: #5e2ea8;
-  transform: scale(1.1);
-}
-
-.agendar-day.selected {
-  background: #2196F3;
-  color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .agendar-day.empty {
@@ -369,66 +383,73 @@ h3 {
   cursor: default;
 }
 
-/* Lista de dias */
 .agendar-days-list {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0;
+  margin-top: 20px;
+  list-style: none;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .agendar-days-list li {
+  padding: 10px;
   background: #ffffff;
-  color: #7a3db8;
-  border-radius: 8px;
-  padding: 5px 15px;
+  border-radius: 5px;
+  margin: 5px 0;
   cursor: pointer;
-  transition: background 0.3s;
-  list-style: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
 }
 
 .agendar-days-list li:hover {
   background: #e0b3ff;
 }
 
-.selected-day-info {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  text-align: left;
+.agendar-hours-list {
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.selected-day-info h3 {
-  color: #7a3db8;
-  font-size: 22px;
-  margin-bottom: 10px;
+.agendar-hours-list li {
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #7a3db8;
 }
 
-.selected-day-info table {
-  width: 100%;
-  border-collapse: collapse;
+.agendar-hours-list li:hover {
+  background: #e0b3ff;
 }
 
-.selected-day-info th,
-.selected-day-info td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #e0e0e0;
+.selected-hour {
+  background: #7a3db8 !important;
+  color: white;
 }
 
-.selected-day-info th {
-  background: #f1e4fb;
-  color: #7a3db8;
+.agendar-button {
+  background: #7a3db8;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
 }
 
-.selected-day-info tr:hover {
-  background: #fafafa;
+.agendar-button:hover {
+  background: #5e2ea8;
 }
-
+/*css do sign*/
+* {
+  box-sizing: border-box;
+}
 
 .auth-container {
   display: flex;
@@ -436,42 +457,57 @@ h3 {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f5f5f5;
-  padding: 20px;
+  background-color: #fafafa;
+  padding: 40px;
 }
-
 .auth-form {
   background-color: #fff;
-  border-radius: 10px;
-  padding: 30px;
+  border-radius: 15px;
+  padding: 40px;
   width: 100%;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.auth-form:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .auth-form h2 {
-  font-size: 24px;
+  font-size: 26px;
   color: #9e66d1;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-weight: 600;
 }
+
 
 .auth-form label {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 8px;
   color: #555;
+  font-weight: 500;
 }
 
 .auth-form input,
 .auth-form select {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 16px;
+  background-color: #f9f9f9;
   box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: #9e66d1;
+  outline: none;
 }
 
 .auth-form input[type="submit"],
@@ -479,29 +515,32 @@ h3 {
   background-color: #9e66d1;
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 14px 25px;
   font-size: 16px;
-  font-weight: bold;
-  border-radius: 25px;
+  font-weight: 600;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
   width: 100%;
 }
 
 .auth-form input[type="submit"]:hover,
 .auth-form button:hover {
   background-color: #7a48a6;
+  transform: translateY(-2px);
 }
 
 .auth-form p {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
 }
 
 .auth-form a {
   color: #9e66d1;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .auth-form a:hover {
@@ -511,13 +550,29 @@ h3 {
 .auth-form select {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
+  padding: 12px 15px;
+}
+.auth-form p.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+  width: 100%;
 }
 
-.auth-form .role-select {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  margin-bottom: 15px;
+.auth-form p.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+  width: 100%; /* Garante que o link se ajuste à largura do formulário */
 }
+
+.auth-form p.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+
 
 .avaliar-container {
   width: 80%;
@@ -973,8 +1028,6 @@ h3 {
 .agendar-calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  margin-top: 20px;
 }
 
 .agendar-day-name {
@@ -1284,4 +1337,35 @@ h3 {
 
 .detalhes-agendamento tr:hover {
   background: #f1f1f1;
+}
+
+.bloquinho{
+  background-color: white;
+  color: #000000;
+  border-radius: 5px;
+  list-style: none;
+  margin: 5px;
+}
+
+.bloquinho2{
+  background-color: white;
+  color: #000000;
+  border-radius: 5px;
+  list-style: none;
+  margin: 5px;
+  text-align: left;
+}
+
+.blocotexto{
+  font-size: 20px;
+  margin: 10px;
+}
+
+.bloco{
+  margin: 20px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: white;
+  border-color: #ffffff00;
 }

@@ -25,7 +25,7 @@ function SideBar() {
 
                         
                         <p>Massagista</p>
-                        <li><Link to="/home-mg" onClick={toggleMenu}>Home</Link></li>
+                        <li><Link to="/home-m" onClick={toggleMenu}>Home</Link></li>
                         <li><Link to="/editar-conta" onClick={toggleMenu}>Editar Conta</Link></li>
                         <li><Link to="/relatorio" onClick={toggleMenu}>Relatorio</Link></li>
                         <li><Link to="/notificacoes-mg" onClick={toggleMenu}>Notificações</Link></li>
@@ -36,10 +36,10 @@ function SideBar() {
 
 
                         <p>Gerente</p>
-                        <li><Link to="/home-mg" onClick={toggleMenu}>Home</Link></li>
+                        <li><Link to="/home-g" onClick={toggleMenu}>Home</Link></li>
                         <li><Link to="/editar-agenda" onClick={toggleMenu}>Editar Agenda</Link></li>
                         <li><Link to="/editar-conta" onClick={toggleMenu}>Editar Conta</Link></li>
-                        <li><Link to="/relatorio-g" onClick={toggleMenu}>Relatorio</Link></li>
+                        <li><Link to="/relatorio-mg" onClick={toggleMenu}>Relatorio</Link></li>
                         <li><Link to="/visualizar-agenda-mg" onClick={toggleMenu}>Visualizar Agenda</Link></li>
                         <li><Link to="/notificacoes-mg" onClick={toggleMenu}>Notificações</Link></li>
                         <li><Link to="/visualizar-agendamentos-mg" onClick={toggleMenu}>Agendamentos</Link></li>

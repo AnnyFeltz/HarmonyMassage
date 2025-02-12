@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-export default function HomePage() {
+function HomePage() {
   const [welcomeVisible, setWelcomeVisible] = useState(true);
+
 
   return (
     <div className="home-container">

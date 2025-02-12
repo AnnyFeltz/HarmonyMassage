@@ -19,6 +19,7 @@ import EditarMassagista from './paginas/EditarMassagista';
 import Avaliar from './paginas/Avaliar';
 import HomePage from './paginas/HomePage';
 import HomePageM from './paginas/HomePageM';
+import HomePageG from './paginas/HomePageG';
 import VisualizarAgendamentos from './paginas/VisualizarAgendamentos';
 import VisualizarAgendamentosM from './paginas/VisualizarAgendamentosM';
 import Notificacoes from './paginas/Notificacoes';
@@ -36,7 +37,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Signin />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/home-mg" element={<HomePageM />} />
+          <Route path="/home-m" element={<HomePageM />} />
+          <Route path="/home-g" element={<HomePageG />} />
           <Route path="/login" element={<Login />} />
           <Route path="/editar-agenda" element={<EditarAgenda />} />
           <Route path="/editar-conta" element={<EditarConta />} />

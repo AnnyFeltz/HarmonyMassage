@@ -1,46 +1,54 @@
 import React, { useState } from "react";
 
 function EditarAgenda() {
-  const [selectedDay, setSelectedDay] = useState(null);
-  const [selectedHour, setSelectedHour] = useState(null);
   const [isEditingDays, setIsEditingDays] = useState(false);
   const [isEditingHours, setIsEditingHours] = useState(false);
-  
-  const availableDays = [5, 8, 12, 15, 20, 22, 25, 30]; 
-  const availableHours = {
-    5: ["09:00", "10:30", "15:00"],
-    8: ["08:00", "11:00", "14:00"],
-    12: ["09:30", "13:00", "16:30"],
-    15: ["10:00", "14:30", "17:00"],
-    20: ["08:30", "12:00", "15:30"],
-    22: ["09:00", "13:30", "16:00"],
-    25: ["07:30", "10:00", "18:00"],
-    30: ["08:00", "12:30", "17:30"],
-  };
+  const [isViewingAllHours, setIsViewingAllHours] = useState(false);
+
+  const [availableDays, setAvailableDays] = useState([5, 8, 12, 15, 20, 22, 25, 30]);
+
+  const [availableHours, setAvailableHours] = useState({
+    "09:00": false,
+    "10:30": false,
+    "15:00": false,
+    "08:00": false,
+    "11:00": false,
+    "14:00": false,
+    "09:30": false,
+    "13:00": false,
+    "16:30": false,
+    "10:00": false,
+    "14:30": false,
+    "17:00": false,
+    "08:30": false,
+    "12:00": false,
+    "15:30": false,
+    "07:30": false,
+    "18:00": false,
+    "12:30": false,
+    "17:30": false,
+  });
 
   const toggleDayAvailability = (day) => {
-    if (availableDays.includes(day)) {
-      const newDays = availableDays.filter(d => d !== day);
-      availableDays.length = 0;
-      availableDays.push(...newDays); 
-    } else {
-      availableDays.push(day);
-    }
+    setAvailableDays((prevDays) =>
+      prevDays.includes(day) ? prevDays.filter(d => d !== day) : [...prevDays, day]
+    );
   };
 
-  const handleDayClick = (day) => {
-    if (availableDays.includes(day)) {
-      setSelectedDay(day);
-      setSelectedHour(null);
-    }
+  const handleShowAllHours = () => {
+    setIsViewingAllHours(!isViewingAllHours);
   };
 
   const handleHourClick = (hour) => {
-    setSelectedHour(hour);
+    setAvailableHours((prevHours) => {
+      const updatedHours = { ...prevHours };
+      updatedHours[hour] = !updatedHours[hour];
+      return updatedHours;
+    });
   };
 
   const generateCalendar = () => {
-    const startDate = new Date(2025, 0, 1); 
+    const startDate = new Date(2025, 0, 1);
     const startDay = startDate.getDay();
     const daysInMonth = 31;
 
@@ -56,7 +64,6 @@ function EditarAgenda() {
         <div
           className={`agendar-day ${availableDays.includes(dayCounter) ? "available" : ""}`}
           key={`day-${dayCounter}`}
-          onClick={() => handleDayClick(dayCounter)}
         >
           {dayCounter}
         </div>
@@ -65,6 +72,24 @@ function EditarAgenda() {
     }
 
     return days;
+  };
+
+  const renderAvailableHoursForMonth = () => {
+    return (
+      <div>
+        <h3>Horários Disponíveis para o Mês:</h3>
+        {Object.keys(availableHours).map((hour) => (
+          <label key={hour} className="agendar-hour-checkbox">
+            <input
+              type="checkbox"
+              checked={availableHours[hour]}
+              onChange={() => handleHourClick(hour)}
+            />
+            {hour}
+          </label>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -83,64 +108,34 @@ function EditarAgenda() {
         </div>
       </div>
 
-      <button onClick={() => setIsEditingDays(!isEditingDays)}>
-        {isEditingDays ? "Cancelar Edição de Dias" : "Editar Dias Disponíveis"}
-      </button>
-      {isEditingDays && (
-        <div className="agendar-day-edit">
-          {Array.from({ length: 31 }, (_, index) => {
-            const day = index + 1;
-            return (
-              <label key={day} className="day-checkbox">
-                <input
-                  type="checkbox"
-                  checked={availableDays.includes(day)}
-                  onChange={() => toggleDayAvailability(day)}
-                />
-                Dia {day}
-              </label>
-            );
-          })}
-        </div>
-      )}
-
-      <div className="agendar-selected-day-info">
-        {selectedDay && <p>Você selecionou o dia: {selectedDay}</p>}
-
-        {selectedDay && (
-          <div>
-            <button onClick={() => setIsEditingHours(!isEditingHours)}>
-              {isEditingHours ? "Cancelar Edição de Horários" : "Editar Horários Disponíveis"}
-            </button>
-            {isEditingHours && (
-              <div className="agendar-hour-edit">
-                <h3>Editar Horários para o Dia {selectedDay}</h3>
-                {["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"].map((hour) => (
-                  <label key={hour} className="agendar-hour-checkbox">
-                    <input
-                      type="checkbox"
-                      checked={availableHours[selectedDay]?.includes(hour)} 
-                      onChange={() => handleHourClick(hour)}
-                    />
-                    {hour}
-                  </label>
-                ))}
-              </div>
-            )}
+      <div className="botoes">
+        <button className="bloco" onClick={() => setIsEditingDays(!isEditingDays)}>
+          {isEditingDays ? "Cancelar Edição de Dias" : "Editar Dias Disponíveis"}
+        </button>
+        {isEditingDays && (
+          <div className="agendar-day-edit">
+            {Array.from({ length: 31 }, (_, index) => {
+              const day = index + 1;
+              return (
+                <label key={day} className="day-checkbox">
+                  <input
+                    type="checkbox"
+                    checked={availableDays.includes(day)}
+                    onChange={() => toggleDayAvailability(day)}
+                  />
+                  Dia {day}
+                </label>
+              );
+            })}
           </div>
         )}
-      </div>
 
-      {selectedDay && !isEditingHours && (
-        <div className="agendar-available-hours">
-          <h3>Horários Disponíveis para o Dia {selectedDay}:</h3>
-          <ul>
-            {availableHours[selectedDay]?.map((hour) => (
-              <li key={hour}>{hour}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+        <button className="bloco" onClick={handleShowAllHours}>
+          {isViewingAllHours ? "Ocultar Horários Disponíveis" : "Ver Horários Disponíveis para o Mês"}
+        </button>
+
+        {isViewingAllHours && renderAvailableHoursForMonth()}
+      </div>
     </div>
   );
 }

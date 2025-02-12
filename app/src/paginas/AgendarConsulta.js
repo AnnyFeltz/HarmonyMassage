@@ -127,7 +127,7 @@ function AgendarConsulta() {
               <h4>Selecione o Profissional:</h4>
               <ul>
                 {scheduleData[selectedDay].profissionais.map((professional, index) => (
-                  <li
+                  <li className="bloquinho"
                     key={index}
                     onClick={() => handleProfessionalSelect(professional)}
                     style={{
@@ -149,7 +149,7 @@ function AgendarConsulta() {
               <h4>Selecione o Horário:</h4>
               <ul>
                 {scheduleData[selectedDay].horarios.map((hora, index) => (
-                  <li
+                  <li className="bloquinho"
                     key={index}
                     onClick={() => handleTimeSelect(hora)}
                     style={{
@@ -166,9 +166,12 @@ function AgendarConsulta() {
 
           {selectedTime && selectedProfessional && (
             <div>
-              <p><strong>Profissional:</strong> {selectedProfessional}</p>
-              <p><strong>Massagem:</strong> {massage}</p>
-              <p><strong>Horário:</strong> {selectedTime}</p>
+              <div className="bloquinho2" >
+                <p><strong>Profissional:</strong> {selectedProfessional}</p>
+                <p><strong>Massagem:</strong> {massage}</p>
+                <p><strong>Horário:</strong> {selectedTime}</p>
+
+              </div>
               <button className="agendar-button">Confirmar Agendamento</button>
             </div>
           )}

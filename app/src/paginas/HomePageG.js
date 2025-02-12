@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function HomePageM() {
+function HomePageM() {
   const [welcomeVisible, setWelcomeVisible] = useState(true);
 
   return (
@@ -24,30 +24,34 @@ export default function HomePageM() {
               <p>Cliente: Ana Silva </p>
               <p>Massagem Relaxante</p>
               <p>Horário: 14h00</p>
+              <p>Profissional: Fernanda Souza</p> {/* Profissional adicionado aqui */}
             </div>
             <div className="card">
               <h3>15 de Fevereiro</h3>
               <p>Cliente: Carlos Mendes</p>
               <p>Massagem Terapêutica</p>
               <p>Horário: 10h30</p>
+              <p>Profissional: Eduardo Silva</p> {/* Profissional adicionado aqui */}
             </div>
             <div className="card">
               <h3>20 de Fevereiro</h3>
               <p>Cliente: Juliana Costa</p>
               <p>Massagem com Pedras Quentes</p>
               <p>Horário: 16h00</p>
+              <p>Profissional: Juliana Costa</p> {/* Profissional adicionado aqui */}
             </div>
             <div className="card-extended">
               <h3>25 de Fevereiro</h3>
               <p>Cliente: Roberto Lima</p>
               <p>Massagem Shiatsu</p>
               <p>Horário: 09h00</p>
+              <p>Profissional: Roberto Lima</p> {/* Profissional adicionado aqui */}
             </div>
           </div>
         </div>
       )}
     </div>
   );
-} 
-export default HomePageM;
+}
 
+export default HomePageM;

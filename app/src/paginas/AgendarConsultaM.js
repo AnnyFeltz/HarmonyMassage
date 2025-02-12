@@ -72,85 +72,89 @@ function AgendarConsulta() {
   };
 
   return (
-    <div className="agendar-container">
-      <h2>Janeiro de 2025</h2>
-      <div className="agendar-calendar">
-        <div className="agendar-grid">
-          <div className="agendar-day-name">Dom</div>
-          <div className="agendar-day-name">Seg</div>
-          <div className="agendar-day-name">Ter</div>
-          <div className="agendar-day-name">Qua</div>
-          <div className="agendar-day-name">Qui</div>
-          <div className="agendar-day-name">Sex</div>
-          <div className="agendar-day-name">Sáb</div>
-          {generateCalendar()}
-        </div>
-      </div>
-
-      <p>Dias disponíveis para agendamento:</p>
-      <ul className="agendar-days-list">
-        {Object.keys(scheduleData).map((day) => (
-          <li key={day} onClick={() => handleDayClick(parseInt(day))}>
-            {`Dia ${day}`}
-          </li>
-        ))}
-      </ul>
-
-      {/* Exibe os dados do dia selecionado */}
-      {selectedDay && (
-        <div className="selected-day-info">
-          <h3>Detalhes do Agendamento</h3>
-          <p>Você selecionou o dia: {selectedDay < 10 ? `0${selectedDay}` : selectedDay}</p>
-
-          {/* Formulário para digitar o nome e CPF do cliente */}
-          <div>
-            <h4>Dados do Cliente:</h4>
-            <input
-              type="text"
-              placeholder="Nome do Cliente"
-              value={clientName}
-              onChange={(e) => setClientName(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="CPF do Cliente"
-              value={clientCpf}
-              onChange={(e) => setClientCpf(e.target.value)}
-            />
+    <div className="branco">
+      <div className="agendar-container">
+        <h2>Janeiro de 2025</h2>
+        <div className="agendar-calendar">
+          <div className="agendar-grid">
+            <div className="agendar-day-name">Dom</div>
+            <div className="agendar-day-name">Seg</div>
+            <div className="agendar-day-name">Ter</div>
+            <div className="agendar-day-name">Qua</div>
+            <div className="agendar-day-name">Qui</div>
+            <div className="agendar-day-name">Sex</div>
+            <div className="agendar-day-name">Sáb</div>
+            {generateCalendar()}
           </div>
-
-          {/* Exibe os horários se um cliente for inserido */}
-          {clientName && clientCpf && (
-            <div>
-              <h4>Selecione o Horário:</h4>
-              <ul>
-                {scheduleData[selectedDay].horarios.map((hora, index) => (
-                  <li
-                    key={index}
-                    onClick={() => handleTimeSelect(hora)}
-                    style={{
-                      cursor: "pointer",
-                      backgroundColor: selectedTime === hora ? "#d3d3d3" : "",
-                    }}
-                  >
-                    {hora}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {selectedTime && clientName && clientCpf && (
-            <div>
-              <p><strong>Cliente:</strong> {clientName}</p>
-              <p><strong>CPF:</strong> {clientCpf}</p>
-              <p><strong>Massagem:</strong> {scheduleData[selectedDay]?.massage}</p>
-              <p><strong>Horário:</strong> {selectedTime}</p>
-              <button className="agendar-button">Confirmar Agendamento</button>
-            </div>
-          )}
         </div>
-      )}
+
+        <p>Dias disponíveis para agendamento:</p>
+        <ul className="agendar-days-list">
+          {Object.keys(scheduleData).map((day) => (
+            <li key={day} onClick={() => handleDayClick(parseInt(day))}>
+              {`Dia ${day}`}
+            </li>
+          ))}
+        </ul>
+
+        {/* Exibe os dados do dia selecionado */}
+        {selectedDay && (
+          <div className=".agendar-selected-day-info">
+            <h2>Detalhes do Agendamento</h2>
+            <p>Você selecionou o dia: {selectedDay < 10 ? `0${selectedDay}` : selectedDay}</p>
+
+            {/* Formulário para digitar o nome e CPF do cliente */}
+            <div>
+              <h4>Dados do Cliente:</h4>
+              <input className="blocotexto"
+                type="text"
+                placeholder="Nome do Cliente"
+                value={clientName}
+                onChange={(e) => setClientName(e.target.value)}
+              />
+              <input className="blocotexto"
+                type="text"
+                placeholder="CPF do Cliente"
+                value={clientCpf}
+                onChange={(e) => setClientCpf(e.target.value)}
+              />
+            </div>
+
+            {/* Exibe os horários se um cliente for inserido */}
+            {clientName && clientCpf && (
+              <div>
+                <h4>Selecione o Horário:</h4>
+                <ul>
+                  {scheduleData[selectedDay].horarios.map((hora, index) => (
+                    <li className="bloquinho"
+                      key={index}
+                      onClick={() => handleTimeSelect(hora)}
+                      style={{
+                        cursor: "pointer",
+                        backgroundColor: selectedTime === hora ? "#d3d3d3" : "",
+                      }}
+                    >
+                      {hora}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {selectedTime && clientName && clientCpf && (
+              <div>
+                <div className="bloquinho2"  >
+                  <p><strong>Cliente:</strong> {clientName}</p>
+                  <p><strong>CPF:</strong> {clientCpf}</p>
+                  <p><strong>Massagem:</strong> {scheduleData[selectedDay]?.massage}</p>
+                  <p><strong>Horário:</strong> {selectedTime}</p>
+                </div>
+                <button className="agendar-button">Confirmar Agendamento</button>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

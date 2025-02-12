@@ -24,7 +24,9 @@ function Login() {
                 <button type="submit">Entrar</button>
             </form>
 
-            <p>Não tem uma conta? <Link to="/">Registrar</Link></p>
+            <p className="auth-switch">
+                Não tem uma conta? <Link to="/">Registrar</Link>
+            </p>
         </div>
     );
 }

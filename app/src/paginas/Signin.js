@@ -58,7 +58,9 @@ function Signin() {
                 <button type="submit">Criar Conta</button>
             </form>
 
-            <p>Já tem uma conta? <Link to="/login">Entrar</Link></p>
+            <p className="auth-switch">
+                Já tem uma conta? <Link to="/login">Entrar</Link>
+            </p>
         </div>
     );
 }
