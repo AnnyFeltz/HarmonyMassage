@@ -697,6 +697,7 @@ h3 {
 .home-container {
   text-align: center;
     font-family: Arial, sans-serif;
+    
 }
 
 .banner {
@@ -824,6 +825,95 @@ h3 {
   border-bottom: none;
 }
 
+/* Estilo para a seção de Consultas Marcadas */
+/* Estilo para a página */
+.home-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+/* Estilo do banner */
+.banner {
+  display: flex;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #6fa56f;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 20px;
+}
+
+/* Caixa de boas-vindas */
+.welcome-box {
+  color: white;
+  transition: opacity 0.5s ease;
+}
+
+.welcome-box.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.welcome-box.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Seção de consultas marcadas */
+.consultas-marcadas {
+  background-color: #a3d9a5;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.consultas-marcadas h2 {
+  font-size: 28px;
+  color: #ffffff;
+  background-color: #4a8b50;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Container dos cartões */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Estilo de cada cartão */
+.card {
+  background-color: #8fc98f;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+}
+
 /*css  do efetuar*/
 
 .efetuar-pagamento-container {
@@ -929,27 +1019,27 @@ h3 {
   font-weight: bold;
 }
 
-.calendar-day {
+.agendar-calendar-day {
   text-align: center;
   padding: 10px;
   cursor: pointer;
   border: 1px solid #ccc;
 }
 
-.calendar-day.available {
+.agendar-calendar-day.available {
   background-color: #4CAF50;
   color: white;
 }
 
-.calendar-day.empty {
+.agendar-calendar-day.empty {
   background-color: #f0f0f0;
 }
 
-.day-checkbox {
+.agendar-day-checkbox {
   display: block;
 }
 
-.hour-checkbox {
+.agendar-hour-checkbox {
   display: block;
 }
 
@@ -966,18 +1056,18 @@ button:hover {
   background-color: #0056b3;
 }
 
-.selected-day-info {
+.agendar-selected-day-info {
   margin-top: 20px;
 }
 
-.hour-edit {
+.agendar-hour-edit {
   margin-top: 20px;
 }
 
-.available-hours ul {
+.agendar-available-hours ul {
   list-style-type: none;
 }
 
-.available-hours li {
+.agendar-available-hours li {
   padding: 5px 0;
 }
