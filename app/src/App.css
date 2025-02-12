@@ -1025,34 +1025,37 @@ h3 {
 
 /*css do editar conta*/
 .editar-conta-container {
-  background-color: #f9f9f9;
-  padding: 30px;
+  background-color: #bf7eee;
+  padding: 40px;
   max-width: 600px;
   margin: 50px auto;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 6px 15px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
 }
 
+/* Estilo para o título */
 .editar-conta-container h2 {
   text-align: center;
-  font-size: 28px;
-  color: #5e2a84;
+  font-size: 32px; 
+  color: #ffffff;
   margin-bottom: 30px;
 }
 
 /* Estilo para os rótulos */
 .editar-conta-container label {
   font-size: 18px;
-  color: #333;
+  color: #ffffff; /* Alterei o tom para o roxo do site */
   display: block;
   margin-bottom: 10px;
+  font-weight: bold;
+  text-align: left; /* Garante que o texto fique alinhado à esquerda */
 }
 
 /* Estilo para os campos de input */
 .editar-conta-container input {
   width: 100%;
-  padding: 12px;
+  padding: 14px; /* Aumentei um pouco o padding para maior conforto */
   margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -1062,39 +1065,49 @@ h3 {
 }
 
 .editar-conta-container input:focus {
-  border-color: #5e2a84;
+  border-color: #5e2a84; /* Ajustei a cor do foco para o tom roxo */
   outline: none;
-  box-shadow: 0 0 5px rgba(94, 42, 132, 0.3);
+  box-shadow: 0 0 8px rgba(94, 42, 132, 0.3);
 }
 
 /* Estilo para o botão de envio */
 .editar-conta-container button {
-  background-color: #5e2a84;
+  background-color: #5e2a84; 
   color: #fff;
-  font-size: 18px;
-  padding: 12px 25px;
+  padding: 14px 25px; 
   border: none;
   border-radius: 8px;
   width: 100%;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  font-weight: normal;
 }
 
 .editar-conta-container button:hover {
-  background-color: #4c1d6d;
+  background-color: #4c1d6d; 
 }
 
-/* Estilo para o formulário */
+/* Layout do formulário */
 .editar-conta-container form {
   display: flex;
   flex-direction: column;
 }
 
-/* Para ajustar a margem e garantir que o layout fique bom */
+/* Remover quebras de linha do formulário */
 .editar-conta-container form br {
-  display: none; /* Remove as quebras de linha */
+  display: none;
 }
 
+/* Ajuste no espaçamento de inputs */
+.editar-conta-container input {
+  margin-bottom: 15px; /* Melhor controle de espaço */
+}
+
+/* Estilo para os inputs de forma geral */
+.editar-conta-container input::placeholder {
+  color: #888; /* Cor mais suave para placeholders */
+  font-weight: normal;
+}
 
 /**/
 .agendar-selected-day-info {
