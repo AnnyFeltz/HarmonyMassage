@@ -5,20 +5,20 @@ const VisualizarAgendamentos = () => {
 
   const scheduleData = {
     5: [
-      { horario: "09:00", cliente: { nome: "José Santos", cpf: "123.456.789-00" }, tipo: "Relaxante" },
-      { horario: "14:00", cliente: { nome: "Ana Lima", cpf: "987.654.321-00" }, tipo: "Desportiva" }
+      { horario: "09:00", cliente: "Maria Silva", tipo: "Relaxante" },
+      { horario: "14:00", cliente: "João Pereira", tipo: "Desportiva" }
     ],
     8: [
-      { horario: "10:00", cliente: { nome: "Carlos Souza", cpf: "456.123.789-00" }, tipo: "Reflexologia" },
-      { horario: "12:00", cliente: { nome: "Fernanda Alves", cpf: "321.654.987-00" }, tipo: "Shiatsu" }
+      { horario: "10:00", cliente: "Ana Costa", tipo: "Reflexologia" },
+      { horario: "12:00", cliente: "Carlos Oliveira", tipo: "Shiatsu" }
     ],
     12: [
-      { horario: "08:00", cliente: { nome: "Juliana Costa", cpf: "159.753.246-00" }, tipo: "Terapêutica" },
-      { horario: "13:00", cliente: { nome: "Ricardo Ferreira", cpf: "753.159.468-00" }, tipo: "Tântrica" }
+      { horario: "08:00", cliente: "Fernanda Souza", tipo: "Terapêutica" },
+      { horario: "13:00", cliente: "Rafael Almeida", tipo: "Tântrica" }
     ],
     15: [
-      { horario: "11:00", cliente: { nome: "Paulo Mendes", cpf: "741.258.963-00" }, tipo: "Pedras Quentes" },
-      { horario: "14:30", cliente: { nome: "Luana Oliveira", cpf: "369.258.147-00" }, tipo: "Anti-stress" }
+      { horario: "11:00", cliente: "Juliana Rodrigues", tipo: "Pedras Quentes" },
+      { horario: "14:30", cliente: "Paulo Mendes", tipo: "Anti-stress" }
     ]
   };
 
@@ -27,28 +27,29 @@ const VisualizarAgendamentos = () => {
   };
 
   return (
-    <div>
-      <h1>Meus Agendamentos </h1>
-      <div>
-        <h3>Dias com consultas:</h3>
-        <ul>
-          {Object.keys(scheduleData).map((day) => (
-            <li key={day} onClick={() => handleDayClick(parseInt(day))}>
-              {`Dia ${day}`}
-            </li>
-          ))}
-        </ul>
+    <div className="visualizar-agendamentos-container">
+      <h1 className="titulo-principal">Meus Agendamentos</h1>
+      <div className="subtitulo">Dias com consultas:</div>
+      <div className="dias-consulta-container">
+        {Object.keys(scheduleData).map((day) => (
+          <div 
+            key={day} 
+            className="dia-consulta" 
+            onClick={() => handleDayClick(parseInt(day))}
+          >
+            {`Dia ${day}`}
+          </div>
+        ))}
       </div>
       
       {selectedDay && (
-        <div>
-          <h3>Detalhes do Agendamento - Dia {selectedDay}</h3>
+        <div className="detalhes-agendamento">
+          <h2>Detalhes do Agendamento - Dia {selectedDay}</h2>
           <table>
             <thead>
               <tr>
                 <th>Horário</th>
                 <th>Cliente</th>
-                <th>CPF</th>
                 <th>Tipo de Massagem</th>
               </tr>
             </thead>
@@ -56,8 +57,7 @@ const VisualizarAgendamentos = () => {
               {scheduleData[selectedDay].map((consulta, index) => (
                 <tr key={index}>
                   <td>{consulta.horario}</td>
-                  <td>{consulta.cliente.nome}</td>
-                  <td>{consulta.cliente.cpf}</td>
+                  <td>{consulta.cliente}</td>
                   <td>{consulta.tipo}</td>
                 </tr>
               ))}

@@ -27,22 +27,24 @@ const VisualizarAgendamentos = () => {
   };
 
   return (
-    <div>
-      <h1>Meus Agendamentos </h1>
-      <div>
-        <h3>Dias com consultas:</h3>
-        <ul>
-          {Object.keys(scheduleData).map((day) => (
-            <li key={day} onClick={() => handleDayClick(parseInt(day))}>
-              {`Dia ${day}`}
-            </li>
-          ))}
-        </ul>
+    <div className="visualizar-agendamentos-container">
+      <h1 className="titulo-principal">Meus Agendamentos</h1>
+      <div className="subtitulo">Dias com consultas:</div>
+      <div className="dias-consulta-container">
+        {Object.keys(scheduleData).map((day) => (
+          <div 
+            key={day} 
+            className="dia-consulta" 
+            onClick={() => handleDayClick(parseInt(day))}
+          >
+            {`Dia ${day}`}
+          </div>
+        ))}
       </div>
       
       {selectedDay && (
-        <div>
-          <h3>Detalhes do Agendamento - Dia {selectedDay}</h3>
+        <div className="detalhes-agendamento">
+          <h2>Detalhes do Agendamento - Dia {selectedDay}</h2>
           <table>
             <thead>
               <tr>

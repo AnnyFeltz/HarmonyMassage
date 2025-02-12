@@ -17,8 +17,10 @@ import AgendarConsulta from './paginas/AgendarConsulta';
 import AgendarConsultaM from './paginas/AgendarConsultaM';
 import EditarMassagista from './paginas/EditarMassagista';
 import Avaliar from './paginas/Avaliar';
-import Home from './paginas/Home';
+import HomePage from './paginas/HomePage';
+import HomePageM from './paginas/HomePageM';
 import VisualizarAgendamentos from './paginas/VisualizarAgendamentos';
+import VisualizarAgendamentosM from './paginas/VisualizarAgendamentosM';
 import Notificacoes from './paginas/Notificacoes';
 import NotificacoesM from './paginas/NotificacoesM';
 
@@ -33,7 +35,8 @@ function App() {
         {!isAuthPage && <Header />}
         <Routes>
           <Route path="/" element={<Signin />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/home-mg" element={<HomePageM />} />
           <Route path="/login" element={<Login />} />
           <Route path="/editar-agenda" element={<EditarAgenda />} />
           <Route path="/editar-conta" element={<EditarConta />} />
@@ -47,6 +50,7 @@ function App() {
           <Route path="/avaliar" element={<Avaliar />} />
           <Route path="/editar-massagista" element={<EditarMassagista />} />
           <Route path="/visualizar-agendamentos" element={<VisualizarAgendamentos />} />
+          <Route path="/visualizar-agendamentos-mg" element={<VisualizarAgendamentosM />} />
           <Route path="/notificacoes" element={<Notificacoes />} />
           <Route path="/notificacoes-mg" element={<NotificacoesM />} />
         </Routes>

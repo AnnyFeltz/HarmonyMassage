@@ -294,31 +294,36 @@ h3 {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #c38de9;
-  border-radius: 10px;
-  box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #c38de9; /* Roxo claro */
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
 }
 
 /* Título */
 .agendar-container h2 {
   color: #ffffff;
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 /* Calendário */
 .agendar-calendar {
   background: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
 }
 
 .agendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 8px;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 15px;
+  justify-items: center;
 }
 
 .agendar-day-name {
@@ -327,7 +332,6 @@ h3 {
   font-size: 16px;
   text-align: center;
   padding: 5px;
-
 }
 
 .agendar-day {
@@ -340,33 +344,8 @@ h3 {
   font-weight: bold;
   font-size: 14px;
   color: #333;
-  transition: 0.3s;
+  transition: background 0.3s, transform 0.3s;
   cursor: pointer;
-}
-.agendar-container p {
-  font-weight: 10px;
-  color: #000000;
-  line-height: 1.6;
-  margin: 10px;
-  font-family: Arial, sans-serif;
-}
-
-.agendar-container .selected-day-info p {
-  font-size: 18px;
-  color: #000000;
-  font-weight: 10px;
-  margin: 10px 0;
-}
-
-.agendar-days-list li {
-  cursor: pointer;
-  padding: 5px 0;
-  font-size: 14px;
-  color: #000000;
-}
-
-.agendar-days-list li:hover {
-  background-color: #f0f0f0;
 }
 
 .agendar-day.available {
@@ -376,6 +355,13 @@ h3 {
 
 .agendar-day.available:hover {
   background: #5e2ea8;
+  transform: scale(1.1);
+}
+
+.agendar-day.selected {
+  background: #2196F3;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .agendar-day.empty {
@@ -383,69 +369,66 @@ h3 {
   cursor: default;
 }
 
+/* Lista de dias */
 .agendar-days-list {
-  margin-top: 20px;
-  list-style: none;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
 }
 
 .agendar-days-list li {
-  padding: 10px;
   background: #ffffff;
-  border-radius: 5px;
-  margin: 5px 0;
+  color: #7a3db8;
+  border-radius: 8px;
+  padding: 5px 15px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
+  list-style: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .agendar-days-list li:hover {
   background: #e0b3ff;
 }
 
-.agendar-hours-list {
-  margin-top: 10px;
-  list-style: none;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+.selected-day-info {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  text-align: left;
 }
 
-.agendar-hours-list li {
-  background: #ffffff;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-  border: 1px solid #7a3db8;
+.selected-day-info h3 {
+  color: #7a3db8;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
-.agendar-hours-list li:hover {
-  background: #e0b3ff;
+.selected-day-info table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.selected-hour {
-  background: #7a3db8 !important;
-  color: white;
+.selected-day-info th,
+.selected-day-info td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.agendar-button {
-  background: #7a3db8;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: 0.3s;
+.selected-day-info th {
+  background: #f1e4fb;
+  color: #7a3db8;
 }
 
-.agendar-button:hover {
-  background: #5e2ea8;
+.selected-day-info tr:hover {
+  background: #fafafa;
 }
+
 
 .auth-container {
   display: flex;
@@ -1206,4 +1189,86 @@ h3 {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/*css agendamento*/
+
+.visualizar-agendamentos-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgb(192, 134, 222);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.titulo-principal {
+  text-align: center;
+  color: #333;
+  font-size: 2em;
+  padding: 20px 0;
+}
+
+.subtitulo {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.dias-consulta-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.dia-consulta {
+  background: #ffffff;
+  color: rgb(167, 79, 207); /*cor da letra dia*/
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dia-consulta:hover {
+  background: rgb(253, 253, 253);
+}
+
+.detalhes-agendamento {
+  margin-top: 30px;
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detalhes-agendamento h2 {
+  color: #444;
+  text-align: center;
+}
+
+.detalhes-agendamento table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.detalhes-agendamento th,
+.detalhes-agendamento td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #995ab8;
+}
+
+.detalhes-agendamento th {
+  background:  #bd80e0;
+  color: white;
+}
+
+.detalhes-agendamento tr:hover {
+  background: #f1f1f1;
 }
