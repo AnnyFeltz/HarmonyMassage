@@ -1369,3 +1369,10 @@ h3 {
   background-color: white;
   border-color: #ffffff00;
 }
+
+.lista-horas{
+  display:flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+}

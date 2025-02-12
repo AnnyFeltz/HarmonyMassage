@@ -77,17 +77,21 @@ function EditarAgenda() {
   const renderAvailableHoursForMonth = () => {
     return (
       <div>
-        <h3>Horários Disponíveis para o Mês:</h3>
-        {Object.keys(availableHours).map((hour) => (
-          <label key={hour} className="agendar-hour-checkbox">
-            <input
-              type="checkbox"
-              checked={availableHours[hour]}
-              onChange={() => handleHourClick(hour)}
-            />
-            {hour}
-          </label>
-        ))}
+        <h2>Horários Disponíveis para o Mês:</h2>
+        <div className="lista-horas">
+          {Object.keys(availableHours).map((hour) => (
+            <label key={hour} className="agendar-hour-checkbox">
+
+              <input
+                type="checkbox"
+                checked={availableHours[hour]}
+                onChange={() => handleHourClick(hour)}
+              />
+              {hour}
+
+            </label>
+          ))}
+        </div>
       </div>
     );
   };
@@ -112,8 +116,10 @@ function EditarAgenda() {
         <button className="bloco" onClick={() => setIsEditingDays(!isEditingDays)}>
           {isEditingDays ? "Cancelar Edição de Dias" : "Editar Dias Disponíveis"}
         </button>
+
         {isEditingDays && (
-          <div className="agendar-day-edit">
+          <div className="lista-horas">
+
             {Array.from({ length: 31 }, (_, index) => {
               const day = index + 1;
               return (
@@ -129,6 +135,7 @@ function EditarAgenda() {
             })}
           </div>
         )}
+
 
         <button className="bloco" onClick={handleShowAllHours}>
           {isViewingAllHours ? "Ocultar Horários Disponíveis" : "Ver Horários Disponíveis para o Mês"}
