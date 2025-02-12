@@ -22,11 +22,13 @@ function Login() {
                     <input type="password" id="login-password" required />
                 </div>
                 <button type="submit">Entrar</button>
+
+                <p className="auth-switch">
+                    Não tem uma conta? <Link to="/">Registrar</Link>
+                </p>
             </form>
 
-            <p className="auth-switch">
-                Não tem uma conta? <Link to="/">Registrar</Link>
-            </p>
+
         </div>
     );
 }
