@@ -31,6 +31,7 @@
   color: white;
   cursor: pointer;
   padding: 0px 7px;
+  
 }
 
 nav {
@@ -412,6 +413,32 @@ h3 {
   background: #e0b3ff;
 }
 
+.agendar-hours-list {
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.agendar-hours-list li {
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #7a3db8;
+}
+
+.agendar-hours-list li:hover {
+  background: #e0b3ff;
+}
+
+.selected-hour {
+  background: #7a3db8 !important;
+  color: white;
+}
+
 /* Botão de confirmação */
 .agendar-button {
   background: #7a3db8;
@@ -665,13 +692,6 @@ h3 {
   background-color: #7a48a6;
 }
 
-
-
-
-
-
-
-
 /* vou deixar aqui pra no bagunçar */
 
 .home-container {
@@ -703,14 +723,261 @@ h3 {
   justify-content: center;
 }
 
+/* Container da página */
+.home-container {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh;
+  max-height: fit-content;
+  justify-content: center;
+}
 
+/* Banner de boas-vindas */
+.banner {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-.descricao {
-  max-width: 80%;
-  margin: 20px auto;
-  font-size: 30px;
+/* Container da página */
+.home-container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding: 0px;
+  margin-left: 80px;
+  background-color: #ffffff;
+
+}
+
+/* Banner de boas-vindas */
+.banner {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Caixa de boas-vindas com efeito de fade */
+.welcome-box {
+  color: white;
+  transition: opacity 0.5s ease;
+}
+
+.welcome-box.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.welcome-box.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Caixa de consultas com grid de 3 colunas */
+.consultas-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  margin-top: 20px;
+}
+
+.consultas-box.show {
+  opacity: 1;
+}
+
+/* Estilo para cada consulta (bloco quadradinho) */
+.consultas-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 300px; /* Altura fixa para os quadradinhos */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.consultas-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.consultas-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.consultas-container li {
+  font-size: 18px;
+  color: #555;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.consultas-container li:last-child {
+  border-bottom: none;
+}
+
+/*css  do efetuar*/
+
+.efetuar-pagamento-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #bf7eee;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.efetuar-pagamento-container h2 {
+  color:  #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
   font-weight: bold;
-  color: #c38de9;
-  text-shadow: 0px 0px 2px rgba(34, 33, 33, 0.652);
-  line-height: 1.6;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+  border-color: #7a3db8;
+  box-shadow: 0 0 8px rgba(122, 61, 184, 0.2);
+  outline: none;
+}
+.form-group textarea.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 40px; 
+}
+.botao-enviar {
+  background: #7a3db8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.botao-enviar:hover {
+  background: #5e2ea8;
+}
+
+.botao-avaliacao {
+  background:  #7a3db8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.botao-avaliacao:hover {
+  background:  #8f60be;
+}
+
+.efetuar-pagamento-container a {
+  text-decoration: none;
+}
+
+.agendar-container {
+  padding: 20px;
+}
+
+.agendar-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.agendar-day-name {
+  text-align: center;
+  font-weight: bold;
+}
+
+.calendar-day {
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.calendar-day.available {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.calendar-day.empty {
+  background-color: #f0f0f0;
+}
+
+.day-checkbox {
+  display: block;
+}
+
+.hour-checkbox {
+  display: block;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.selected-day-info {
+  margin-top: 20px;
+}
+
+.hour-edit {
+  margin-top: 20px;
+}
+
+.available-hours ul {
+  list-style-type: none;
+}
+
+.available-hours li {
+  padding: 5px 0;
 }

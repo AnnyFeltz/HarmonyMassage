@@ -13,7 +13,6 @@ function Avaliar() {
 
             {/* Estrelas no topo */}
             <div className="form-group">
-                <label>Avaliação:</label>
                 <div className="estrelas">
                     {[...Array(5)].map((_, index) => (
                         <span
