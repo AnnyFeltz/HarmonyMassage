@@ -2,39 +2,28 @@ import React, { useState } from "react";
 
 function AgendarConsulta() {
   const [selectedDay, setSelectedDay] = useState(null);
-  const [selectedProfessional, setSelectedProfessional] = useState(null);
+  const [clientName, setClientName] = useState("");
+  const [clientCpf, setClientCpf] = useState("");
   const [selectedTime, setSelectedTime] = useState(null);
   const [massage, setMassage] = useState("");
 
-  // Dados simulados para horários, profissionais e massagem
+  // Dados simulados para horários e massagem
   const scheduleData = {
     5: {
       horarios: ["09:00", "14:00", "16:00"],
-      profissionais: [
-        { name: "Maria Silva", massage: "Relaxante" },
-        { name: "João Pereira", massage: "Desportiva" }
-      ],
+      massage: "Relaxante",
     },
     8: {
       horarios: ["10:00", "12:00", "15:00"],
-      profissionais: [
-        { name: "Ana Costa", massage: "Reflexologia" },
-        { name: "Carlos Oliveira", massage: "Shiatsu" }
-      ],
+      massage: "Reflexologia",
     },
     12: {
       horarios: ["08:00", "13:00", "18:00"],
-      profissionais: [
-        { name: "Fernanda Souza", massage: "Terapêutica" },
-        { name: "Rafael Almeida", massage: "Tântrica" }
-      ],
+      massage: "Terapêutica",
     },
     15: {
       horarios: ["11:00", "14:30", "17:00"],
-      profissionais: [
-        { name: "Juliana Rodrigues", massage: "Pedras Quentes" },
-        { name: "Paulo Mendes", massage: "Anti-stress" }
-      ],
+      massage: "Pedras Quentes",
     },
   };
 
@@ -71,18 +60,10 @@ function AgendarConsulta() {
     setSelectedDay(day);
     // Atualiza as informações do dia selecionado
     if (scheduleData[day]) {
-      setSelectedProfessional(null); // Limpa a seleção anterior
       setSelectedTime(null); // Limpa o horário selecionado
     } else {
-      setSelectedProfessional(null);
       setSelectedTime(null);
     }
-  };
-
-  // Função chamada para selecionar o profissional
-  const handleProfessionalSelect = (professional) => {
-    setSelectedProfessional(professional.name);
-    setMassage(professional.massage);
   };
 
   // Função chamada para selecionar o horário
@@ -121,30 +102,25 @@ function AgendarConsulta() {
           <h3>Detalhes do Agendamento</h3>
           <p>Você selecionou o dia: {selectedDay < 10 ? `0${selectedDay}` : selectedDay}</p>
 
-          {/* Se houver profissionais para o dia selecionado, exibe a lista de seleção */}
-          {scheduleData[selectedDay]?.profissionais && (
-            <div>
-              <h4>Selecione o Profissional:</h4>
-              <ul>
-                {scheduleData[selectedDay].profissionais.map((professional, index) => (
-                  <li
-                    key={index}
-                    onClick={() => handleProfessionalSelect(professional)}
-                    style={{
-                      cursor: "pointer",
-                      backgroundColor:
-                        selectedProfessional === professional.name ? "#d3d3d3" : "",
-                    }}
-                  >
-                    {professional.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {/* Formulário para digitar o nome e CPF do cliente */}
+          <div>
+            <h4>Dados do Cliente:</h4>
+            <input
+              type="text"
+              placeholder="Nome do Cliente"
+              value={clientName}
+              onChange={(e) => setClientName(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="CPF do Cliente"
+              value={clientCpf}
+              onChange={(e) => setClientCpf(e.target.value)}
+            />
+          </div>
 
-          {/* Exibe os horários se um profissional for selecionado */}
-          {selectedProfessional && (
+          {/* Exibe os horários se um cliente for inserido */}
+          {clientName && clientCpf && (
             <div>
               <h4>Selecione o Horário:</h4>
               <ul>
@@ -164,10 +140,11 @@ function AgendarConsulta() {
             </div>
           )}
 
-          {selectedTime && selectedProfessional && (
+          {selectedTime && clientName && clientCpf && (
             <div>
-              <p><strong>Profissional:</strong> {selectedProfessional}</p>
-              <p><strong>Massagem:</strong> {massage}</p>
+              <p><strong>Cliente:</strong> {clientName}</p>
+              <p><strong>CPF:</strong> {clientCpf}</p>
+              <p><strong>Massagem:</strong> {scheduleData[selectedDay]?.massage}</p>
               <p><strong>Horário:</strong> {selectedTime}</p>
               <button className="agendar-button">Confirmar Agendamento</button>
             </div>

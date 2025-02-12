@@ -208,7 +208,6 @@ tbody tr:nth-child(even) {
   transform: scale(1.05);
 }
 
-/* Calendário geral */
 .calendar-container {
   display: flex;
   flex-wrap: wrap;
@@ -322,7 +321,6 @@ h3 {
   margin-top: 10px;
 }
 
-/* Nomes dos dias da semana */
 .agendar-day-name {
   font-weight: bold;
   color: #7a3db8;
@@ -332,7 +330,6 @@ h3 {
 
 }
 
-/* Estilo dos dias do calendário */
 .agendar-day {
   width: 40px;
   height: 40px;
@@ -346,7 +343,6 @@ h3 {
   transition: 0.3s;
   cursor: pointer;
 }
-/*tesyta*/
 .agendar-container p {
   font-weight: 10px;
   color: #000000;
@@ -373,7 +369,6 @@ h3 {
   background-color: #f0f0f0;
 }
 
-/* Dias disponíveis para agendamento */
 .agendar-day.available {
   background: #7a3db8;
   color: #ffffff;
@@ -383,13 +378,11 @@ h3 {
   background: #5e2ea8;
 }
 
-/* Dias vazios (antes do início do mês) */
 .agendar-day.empty {
   background: transparent;
   cursor: default;
 }
 
-/* Lista de dias disponíveis */
 .agendar-days-list {
   margin-top: 20px;
   list-style: none;
@@ -439,7 +432,6 @@ h3 {
   color: white;
 }
 
-/* Botão de confirmação */
 .agendar-button {
   background: #7a3db8;
   color: white;
@@ -455,8 +447,6 @@ h3 {
   background: #5e2ea8;
 }
 
-
-/* Estilo para as páginas de autenticação */
 .auth-container {
   display: flex;
   flex-direction: column;
@@ -520,7 +510,6 @@ h3 {
   background-color: #7a48a6;
 }
 
-/* Link de navegação */
 .auth-form p {
   text-align: center;
   margin-top: 15px;
@@ -547,7 +536,6 @@ h3 {
   margin-bottom: 15px;
 }
 
-/* Estilo do componente Avaliar */
 .avaliar-container {
   width: 80%;
   max-width: 800px;
@@ -560,15 +548,12 @@ h3 {
   color: white;
 }
 
-/* Título da Avaliação */
 .avaliar-container h2 {
   font-size: 24px;
   color: #ffffff;
   margin-bottom: 20px;
 }
 
-/* Contêiner das estrelas */
-/* Estilo para as estrelas interativas */
 .estrelas {
   display: flex;
   justify-content: center;
@@ -584,14 +569,13 @@ h3 {
 }
 
 .estrelas .estrela.selected {
-  color: #f39c12;  /* Cor das estrelas selecionadas */
+  color: #f39c12;
 }
 
 .estrelas .estrela:hover {
-  color: #f39c12;  /* Cor da estrela ao passar o mouse */
+  color: #f39c12;
 }
 
-/* Informações do massagista e tipo de massagem */
 .informacoes-avaliacao {
   margin-bottom: 20px;
 }
@@ -601,7 +585,6 @@ h3 {
   color: #ffffff;
 }
 
-/* Área para escrever opinião */
 .opiniao-container {
   margin-top: 20px;
 }
@@ -618,7 +601,6 @@ h3 {
   margin-bottom: 20px;
 }
 
-/* Botão de Envio */
 .botao-avaliacao {
   background-color: #e3bbff;
   color: white;
@@ -692,8 +674,6 @@ h3 {
   background-color: #7a48a6;
 }
 
-/* vou deixar aqui pra no bagunçar */
-
 .home-container {
   text-align: center;
     font-family: Arial, sans-serif;
@@ -724,7 +704,6 @@ h3 {
   justify-content: center;
 }
 
-/* Container da página */
 .home-container {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
@@ -737,13 +716,11 @@ h3 {
   justify-content: center;
 }
 
-/* Banner de boas-vindas */
 .banner {
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Container da página */
 .home-container {
   font-family: Arial, sans-serif;
   display: flex;
@@ -755,13 +732,11 @@ h3 {
 
 }
 
-/* Banner de boas-vindas */
 .banner {
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Caixa de boas-vindas com efeito de fade */
 .welcome-box {
   color: white;
   transition: opacity 0.5s ease;
@@ -777,10 +752,9 @@ h3 {
   visibility: visible;
 }
 
-/* Caixa de consultas com grid de 3 colunas */
 .consultas-box {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -791,13 +765,12 @@ h3 {
   opacity: 1;
 }
 
-/* Estilo para cada consulta (bloco quadradinho) */
 .consultas-container {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 300px; /* Altura fixa para os quadradinhos */
+  height: 300px; 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -825,31 +798,27 @@ h3 {
   border-bottom: none;
 }
 
-/* Estilo para a seção de Consultas Marcadas */
-/* Estilo para a página */
 .home-container {
   font-family: Arial, sans-serif;
-  background-color: #ffffff; /* Cor de fundo suave */
+  background-color: #ffffff; 
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   min-height: 100vh;
-  justify-content: flex-start; /* Alinha o conteúdo ao topo */
-  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  justify-content: flex-start; 
+  align-items: center; 
 }
 
-/* Estilo do banner */
 .banner {
   background-color: #b372c7; 
   padding: 20px;
   text-align: center;
-  width: 100%; /* Ocupa toda a largura */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Caixa de boas-vindas */
 .welcome-box {
   color: white;
   transition: opacity 0.5s ease;
@@ -865,12 +834,10 @@ h3 {
   visibility: visible;
 }
 
-/* Seção de consultas marcadas */
 .consultas-marcadas {
   background-color: #bf7eee;
   padding: 30px;
   border-radius: 12px;
-  text-align: center;
 }
 
 .consultas-marcadas h2 {
@@ -881,22 +848,18 @@ h3 {
   border-radius: 12px;
 }
 
-/* Container dos cartões */
 .cards-container {
   display: flex;
-  justify-content: center;
   gap: 30px;
   margin-top: 40px;
 }
 
-/* Estilo de cada cartão */
 .card {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 10px 6px 12px rgba(0, 0, 0, 0.1);
   width: 250px;
-  text-align: center;
 }
 
 .card h3 {
@@ -911,17 +874,14 @@ h3 {
   word-wrap: break-word;
   white-space: normal;
   overflow-wrap: break-word; 
-  
 }
 
-/* Estilo para os novos cartões, com as mesmas cores dos anteriores */
 .card-extended {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   width: 250px;
-  text-align: center;
 }
 
 .card-extended h3 {
@@ -934,9 +894,6 @@ h3 {
   font-size: 18px;
   color: #555;
 }
-
-
-/*css  do efetuar*/
 
 .efetuar-pagamento-container {
   max-width: 500px;
@@ -1029,6 +986,7 @@ h3 {
   padding: 20px;
 }
 
+/*css do agendar*/
 .agendar-calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -1065,19 +1023,80 @@ h3 {
   display: block;
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px 15px;
-  background-color: #007BFF;
-  color: white;
+/*css do editar conta*/
+.editar-conta-container {
+  background-color: #f9f9f9;
+  padding: 30px;
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.editar-conta-container h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #5e2a84;
+  margin-bottom: 30px;
+}
+
+/* Estilo para os rótulos */
+.editar-conta-container label {
+  font-size: 18px;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Estilo para os campos de input */
+.editar-conta-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.editar-conta-container input:focus {
+  border-color: #5e2a84;
+  outline: none;
+  box-shadow: 0 0 5px rgba(94, 42, 132, 0.3);
+}
+
+/* Estilo para o botão de envio */
+.editar-conta-container button {
+  background-color: #5e2a84;
+  color: #fff;
+  font-size: 18px;
+  padding: 12px 25px;
   border: none;
+  border-radius: 8px;
+  width: 100%;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
-button:hover {
-  background-color: #0056b3;
+.editar-conta-container button:hover {
+  background-color: #4c1d6d;
 }
 
+/* Estilo para o formulário */
+.editar-conta-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Para ajustar a margem e garantir que o layout fique bom */
+.editar-conta-container form br {
+  display: none; /* Remove as quebras de linha */
+}
+
+
+/**/
 .agendar-selected-day-info {
   margin-top: 20px;
 }
@@ -1092,4 +1111,99 @@ button:hover {
 
 .agendar-available-hours li {
   padding: 5px 0;
+}
+
+.notificacoes-container {
+  background-color: #c38de9;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  animation: fadeIn 1s ease-out;
+}
+
+.notificacoes-container h1 {
+  font-size: 30px;
+  color: #5e2a84;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.notificacoes-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notificacoes-container li {
+  background-color: #fff;
+  border-radius: 12px;  
+  padding: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  color: #444;
+  position: relative;
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.notificacoes-container li:nth-child(1) {
+  animation-delay: 0s; 
+}
+
+.notificacoes-container li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.notificacoes-container li:nth-child(3) {
+  animation-delay: 0.4s; 
+}
+
+.notificacoes-container li:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.notificacoes-container li:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.notificacoes-container li:nth-child(6) {
+  animation-delay: 1s; 
+}
+
+.notificacoes-container li:nth-child(7) {
+  animation-delay: 1.2s; 
+}
+
+.notificacoes-container li:nth-child(8) {
+  animation-delay: 1.4s; 
+}
+
+.notificacoes-container li .notificacao-icone {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

@@ -30,6 +30,8 @@ function SideBar() {
                         <li><Link to="/notificacoes-mg" onClick={toggleMenu}>Notificações</Link></li>
                         <li><Link to="/editar-agenda-mg" onClick={toggleMenu}>Editar Agenda</Link></li>
                         <li><Link to="/visualizar-agendamentos-mg" onClick={toggleMenu}>Agendamentos</Link></li>
+                        <li><Link to="/visualizar-agenda-mg" onClick={toggleMenu}>Visualizar Agenda</Link></li>
+
 
 
                         <p>Gerente</p>

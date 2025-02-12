@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function EditarMassagista() {
-    // Estado para armazenar os dados do massagista
     const [formData, setFormData] = useState({
         nome: '',
         especializacao: '',
@@ -9,7 +8,6 @@ function EditarMassagista() {
         disponibilidade: ''
     });
 
-    // Função para lidar com as mudanças nos campos do formulário
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -18,11 +16,9 @@ function EditarMassagista() {
         }));
     };
 
-    // Função para submeter os dados (ainda mockado, você pode substituir com a lógica real)
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Dados enviados: ', formData);
-        // Aqui você pode chamar sua API ou lógica de backend
         alert('Dados do massagista atualizados com sucesso!');
     };
 

@@ -79,7 +79,7 @@ function VisualizarAgenda() {
 
                     {monthData.index === 0 && (
                         <Link
-                            to="/agendar/janeiro"
+                            to="/agendar/janeiro/m"
                             style={{ 
                                 position: "absolute", 
                                 opacity: 0, 

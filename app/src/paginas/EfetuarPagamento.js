@@ -4,20 +4,20 @@ function EfetuarPagamento() {
     const [pagamentoEfetuado, setPagamentoEfetuado] = useState(false);
 
     function handleSubmit(event) {
-        event.preventDefault(); // Impede o envio do formulário
-        setPagamentoEfetuado(true); // Exibe a mensagem após o pagamento
+        event.preventDefault(); 
+        setPagamentoEfetuado(true);
     }
 
     return (
         <div className="efetuar-pagamento-container">
             {pagamentoEfetuado ? (
                 <div>
-                    <h2>Pagamento efetuado com sucesso!</h2> {/* Mensagem após pagamento */}
+                    <h2>Pagamento efetuado com sucesso!</h2> 
                     <a href="/avaliar">
                         <button className="botao-avaliacao">
                             Avaliar Consulta
                         </button>
-                    </a> {/* Link para redirecionar */}
+                    </a>
                 </div>
             ) : (
                 <form onSubmit={handleSubmit}>

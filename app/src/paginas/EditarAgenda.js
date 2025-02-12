@@ -6,7 +6,7 @@ function EditarAgenda() {
   const [isEditingDays, setIsEditingDays] = useState(false);
   const [isEditingHours, setIsEditingHours] = useState(false);
   
-  const availableDays = [5, 8, 12, 15, 20, 22, 25, 30]; // Dias disponíveis
+  const availableDays = [5, 8, 12, 15, 20, 22, 25, 30]; 
   const availableHours = {
     5: ["09:00", "10:30", "15:00"],
     8: ["08:00", "11:00", "14:00"],
@@ -18,12 +18,11 @@ function EditarAgenda() {
     30: ["08:00", "12:30", "17:30"],
   };
 
-  // Função para alterar a disponibilidade dos dias
   const toggleDayAvailability = (day) => {
     if (availableDays.includes(day)) {
       const newDays = availableDays.filter(d => d !== day);
-      availableDays.length = 0; // Limpar o array
-      availableDays.push(...newDays); // Atualizar com os dias restantes
+      availableDays.length = 0;
+      availableDays.push(...newDays); 
     } else {
       availableDays.push(day);
     }
@@ -32,7 +31,7 @@ function EditarAgenda() {
   const handleDayClick = (day) => {
     if (availableDays.includes(day)) {
       setSelectedDay(day);
-      setSelectedHour(null); // Resetar o horário ao selecionar um novo dia
+      setSelectedHour(null);
     }
   };
 
@@ -41,19 +40,17 @@ function EditarAgenda() {
   };
 
   const generateCalendar = () => {
-    const startDate = new Date(2025, 0, 1); // Janeiro de 2025
+    const startDate = new Date(2025, 0, 1); 
     const startDay = startDate.getDay();
     const daysInMonth = 31;
 
     let days = [];
     let dayCounter = 1;
 
-    // Preencher os dias vazios antes do primeiro dia do mês
     for (let i = 0; i < startDay; i++) {
       days.push(<div className="agendar-day empty" key={`empty-${i}`} />);
     }
 
-    // Gerar os dias do mês
     for (let i = startDay; i < startDay + daysInMonth && dayCounter <= daysInMonth; i++) {
       days.push(
         <div
@@ -86,7 +83,6 @@ function EditarAgenda() {
         </div>
       </div>
 
-      {/* Botões para editar dias e horários */}
       <button onClick={() => setIsEditingDays(!isEditingDays)}>
         {isEditingDays ? "Cancelar Edição de Dias" : "Editar Dias Disponíveis"}
       </button>
@@ -111,7 +107,6 @@ function EditarAgenda() {
       <div className="agendar-selected-day-info">
         {selectedDay && <p>Você selecionou o dia: {selectedDay}</p>}
 
-        {/* Mostrar e editar os horários disponíveis para o dia selecionado */}
         {selectedDay && (
           <div>
             <button onClick={() => setIsEditingHours(!isEditingHours)}>
@@ -124,7 +119,7 @@ function EditarAgenda() {
                   <label key={hour} className="agendar-hour-checkbox">
                     <input
                       type="checkbox"
-                      checked={availableHours[selectedDay]?.includes(hour)} // Verifica se está disponível
+                      checked={availableHours[selectedDay]?.includes(hour)} 
                       onChange={() => handleHourClick(hour)}
                     />
                     {hour}
@@ -136,7 +131,6 @@ function EditarAgenda() {
         )}
       </div>
 
-      {/* Exibir os horários atuais para o dia selecionado */}
       {selectedDay && !isEditingHours && (
         <div className="agendar-available-hours">
           <h3>Horários Disponíveis para o Dia {selectedDay}:</h3>
