@@ -8,8 +8,8 @@ export default function HomePage() {
       {welcomeVisible && (
         <div className="banner">
           <div className={`welcome-box ${welcomeVisible ? "visible" : "hidden"}`}>
-            <h1>Bem-vindo!</h1>
-            <p>Descubra as informações de vendas e estoque</p>
+            <h1>Bem-vindo ao Harmony Massagem!</h1>
+            <p>Confira seus agendamentos de massagem.</p>
             <button className="botao-enviar" onClick={() => setWelcomeVisible(false)}>OK</button>
           </div>
         </div>
@@ -17,22 +17,37 @@ export default function HomePage() {
 
       {!welcomeVisible && (
         <div className="consultas-marcadas">
-          <h2>Consultas Marcadas</h2>
+          <h2>Agendamentos</h2>
           <div className="cards-container">
             <div className="card">
-              <h3>JAN-02</h3>
-              <p>Consulta sobre vendas</p>
+              <h3>12 de Fevereiro</h3>
+              <p>Profissional: Ana Silva </p>
+              <p>Massagem Relaxante</p>
               <p>Horário: 14h00</p>
             </div>
             <div className="card">
-              <h3>FEV-08</h3>
-              <p>Revisão de estoque</p>
+              <h3>15 de Fevereiro</h3>
+              <p>Profissional: Carlos Mendes</p>
+              <p>Massagem Terapêutica</p>
               <p>Horário: 10h30</p>
             </div>
             <div className="card">
-              <h3>MAR-15</h3>
-              <p>Planejamento de descontos</p>
+              <h3>20 de Fevereiro</h3>
+              <p>Profissional: Juliana Costa</p>
+              <p>Massagem com Pedras Quentes</p>
               <p>Horário: 16h00</p>
+            </div>
+            <div className="card-extended">
+              <h3>25 de Fevereiro</h3>
+              <p>Profissional: Roberto Lima</p>
+              <p>Massagem Shiatsu</p>
+              <p>Horário: 09h00</p>
+            </div>
+            <div className="card-extended">
+              <h3>28 de Fevereiro</h3>
+              <p>Profissional: Mariana Souza</p>
+              <p>Massagem Deep Tissue</p>
+              <p>Horário: 18h30</p>
             </div>
           </div>
         </div>

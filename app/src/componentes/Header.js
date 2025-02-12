@@ -10,7 +10,14 @@ function Header() {
         "/relatorio": "Relatorio",
         "/editar-conta": "Editar Conta",
         "/visualizar-agenda": "Visualizar Agenda",
-        "/efetuar-pagamento": "Efetuar Pagamento",
+        "/visualizar-agendamentos": "Agendamentos",
+        "/editar-massagista": "Editar Massagistas",
+        "/agendar/janeiro": "Agendar",
+        "/avalair": "Avaliar",
+        "/efetuar-pagamento": "Efeutar Pagamento",
+        "/notificacoes": "Notificações",
+        "/": "",
+
     };
 
     return (
