@@ -55,6 +55,7 @@ function App() {
           <Route path="/visualizar-agendamentos-mg" element={<VisualizarAgendamentosM />} />
           <Route path="/notificacoes" element={<Notificacoes />} />
           <Route path="/notificacoes-mg" element={<NotificacoesM />} />
+          <Route path="/editar-massagista" element={<EditarMassagista />} />
         </Routes>
       </div>
     </div>

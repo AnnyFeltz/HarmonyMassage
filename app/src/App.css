@@ -1376,3 +1376,57 @@ h3 {
   row-gap: 10px;
   column-gap: 10px;
 }
+
+.editar-massagista-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #c38de9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.editar-massagista-container h2 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.editar-massagista-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #1f1f1f;
+}
+
+.editar-massagista-container input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.editar-massagista-container textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #b5b5b5;
+}

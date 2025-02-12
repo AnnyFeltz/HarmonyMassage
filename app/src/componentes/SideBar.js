@@ -43,6 +43,7 @@ function SideBar() {
                         <li><Link to="/visualizar-agenda-mg" onClick={toggleMenu}>Visualizar Agenda</Link></li>
                         <li><Link to="/notificacoes-mg" onClick={toggleMenu}>Notificações</Link></li>
                         <li><Link to="/visualizar-agendamentos-mg" onClick={toggleMenu}>Agendamentos</Link></li>
+                        <li><Link to="/editar-massagista" onClick={toggleMenu}>Editar Massagistas</Link></li>
 
                     </ul>
                 </nav>
