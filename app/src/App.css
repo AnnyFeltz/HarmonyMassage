@@ -1,3 +1,14 @@
+/* Nova paleta de cores utilizada:
+   - Lilás escuro:     #9d4bca  (títulos, botões principais, fundos de elementos escuros)
+   - Lilás médio:      #b378d3  (destaques, hover, bordas)
+   - Lilás vibrante:   #c39fdb  (detalhes, ênfase)
+   - Lilás suave:      #e3b9f1  (fundos leves, elementos secundários)
+   - Lilás claro:      #f0d7f9  (fundos suaves, seções)
+   - Lilás quase branco: #f8e4ff (contrastes suaves)
+   - Branco:           #ffffff
+   - Preto:            #000000
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +20,7 @@
   display: flex;
   min-height: 100vh;
   max-height: fit-content;
-  background-color: #ffffff;
+  background-color: white; /* branco */
 }
 
 /* Menu lateral */
@@ -17,7 +28,7 @@
   width: 60px;
   height: 100vh;
   display: flex;
-  background-color: #b17fd4;
+  background-color: #8a34b8; /* lilás escuro */
   flex-direction: column;
   padding: 10px;
   transition: width 0.3s;
@@ -28,10 +39,9 @@
 
 .menu-icon {
   font-size: 25px;
-  color: white;
+  color: #ffffff; /* branco */
   cursor: pointer;
   padding: 0px 7px;
-  
 }
 
 nav {
@@ -69,13 +79,13 @@ nav ul li {
 }
 
 nav ul li:hover {
-  background-color: #a06dc4;
+  background-color: #b378d3; /* lilás médio */
   transition: 0.3s;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: white;
+  color: #ffffff; /* branco */
   font-size: 18px;
   display: block;
   padding: 10px;
@@ -91,8 +101,8 @@ nav ul li a {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #ffffff; /*cor dos titulos*/
-  background-color: #c38de9;
+  color: white; /* branco para o título */
+  background-color: #9d4bca; /* lilás escuro */
   padding: 10px;
 }
 
@@ -100,7 +110,7 @@ nav ul li a {
   width: 90%;
   max-width: 600px;
   margin: 50px auto;
-  background: #fff;
+  background: #ffffff; /* branco */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -115,7 +125,7 @@ nav ul li a {
 }
 
 .nav-button {
-  background-color: #e1c6f2;
+  background-color: #f0d7f9; /* lilás claro */
   border: none;
   padding: 12px;
   font-size: 24px;
@@ -125,12 +135,12 @@ nav ul li a {
 }
 
 .nav-button:hover {
-  background-color: #d58fd7;
+  background-color: #b378d3; /* lilás médio */
 }
 
 h2 {
   font-size: 24px;
-  color: #9e66d1;
+  color: #9d4bca; /* lilás escuro */
 }
 
 .relatorio-container {
@@ -138,13 +148,13 @@ h2 {
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
-  background: #c38de9;
+  background: #e3b9f1; /* lilás suave */
   border-radius: 10px;
   box-shadow: 10px 14px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-h2 {
+.relatorio-container h2 {
   color: #ffffff;
   margin-bottom: 15px;
 }
@@ -152,28 +162,29 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  background: #ffffff; /* branco */
   border-radius: 8px;
   overflow: hidden;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
-  border: 1px solid #e2aadf;
+  border: 1px solid #b378d3; /* lilás médio */
   font-size: 16px;
 }
 
 th {
-  background-color: #e3bbff;
-  color: white;
+  background-color: #f0d7f9; /* lilás claro */
+  color: #ffffff;
 }
 
 td {
-  background-color: #ffffff;
+  background-color: #ffffff; /* branco */
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f6e4fd;
+  background-color: #f8e4ff; /* lilás quase branco */
 }
 
 @media (max-width: 600px) {
@@ -182,15 +193,16 @@ tbody tr:nth-child(even) {
     padding: 10px;
   }
 
-  th, td {
+  th,
+  td {
     padding: 8px;
     font-size: 14px;
   }
 }
 
 .botao-enviar {
-  background-color: #e3bbff;
-  color: white;
+  background-color: #c39fdb; /* lilás vibrante */
+  color: #ffffff;
   border: none;
   padding: 12px 20px;
   font-size: 16px;
@@ -204,10 +216,11 @@ tbody tr:nth-child(even) {
 }
 
 .botao-enviar:hover {
-  background-color: #d1a4f1;
+  background-color: #b378d3; /* lilás médio */
   transform: scale(1.05);
 }
 
+/* Outra definição de calendar-container (layout flex) */
 .calendar-container {
   display: flex;
   flex-wrap: wrap;
@@ -218,11 +231,11 @@ tbody tr:nth-child(even) {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #c38de9;
+  background-color: #e3b9f1; /* lilás suave */
 }
 
 .calendar {
-  background-color: #fff;
+  background-color: #ffffff; /* branco */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -233,10 +246,16 @@ tbody tr:nth-child(even) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.2s ease-in-out;
+}
+
+.calendar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 h3 {
-  color: #9e66d1;
+  color: #9d4bca; /* lilás escuro */
   margin-bottom: 10px;
 }
 
@@ -249,7 +268,7 @@ h3 {
 
 .calendar-day-name {
   font-weight: bold;
-  color: #9e66d1;
+  color: #9d4bca; /* lilás escuro */
   font-size: 16px;
   text-align: center;
   padding: 5px;
@@ -269,7 +288,7 @@ h3 {
 }
 
 .calendar-day:hover {
-  background-color: #f6e4fd;
+  background-color: #f8e4ff; /* lilás quase branco */
 }
 
 .calendar-day.empty {
@@ -279,37 +298,29 @@ h3 {
 .selected-day-info {
   margin-top: 20px;
   font-size: 18px;
-  color: #9e66d1;
+  color: #9d4bca; /* lilás escuro */
   text-align: center;
 }
-.calendar {
-  transition: transform 0.2s ease-in-out; 
-}
-.calendar:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
-}
-/* agendaR  */
+
+/* Agenda */
 .agendar-container {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #c38de9;
+  background-color: #e3b9f1; /* lilás suave */
   border-radius: 10px;
   box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* Título */
 .agendar-container h2 {
-  color: #ffffff;
+  color: #9d4bca; /* lilás escuro */
   font-size: 24px;
   margin-bottom: 15px;
 }
 
-/* Calendário */
 .agendar-calendar {
-  background: #ffffff;
+  background: #ffffff; /* branco */
   padding: 15px;
   border-radius: 10px;
 }
@@ -323,11 +334,10 @@ h3 {
 
 .agendar-day-name {
   font-weight: bold;
-  color: #7a3db8;
+  color: #9d4bca; /* lilás escuro */
   font-size: 16px;
   text-align: center;
   padding: 5px;
-
 }
 
 .agendar-day {
@@ -339,13 +349,14 @@ h3 {
   border-radius: 50%;
   font-weight: bold;
   font-size: 14px;
-  color: #333;
+  color: #000000; /* preto */
   transition: 0.3s;
   cursor: pointer;
 }
+
 .agendar-container p {
-  font-weight: 10px;
-  color: #000000;
+  font-weight: 10;
+  color: #9d4bca; /* lilás escuro */
   line-height: 1.6;
   margin: 10px;
   font-family: Arial, sans-serif;
@@ -353,8 +364,8 @@ h3 {
 
 .agendar-container .selected-day-info p {
   font-size: 18px;
-  color: #000000;
-  font-weight: 10px;
+  color: #9d4bca; /* lilás escuro */
+  font-weight: 10;
   margin: 10px 0;
 }
 
@@ -362,20 +373,20 @@ h3 {
   cursor: pointer;
   padding: 5px 0;
   font-size: 14px;
-  color: #000000;
+  color:#9d4bca; /* lilás escuro */
 }
 
 .agendar-days-list li:hover {
-  background-color: #f0f0f0;
+  background-color: #f8e4ff; /* lilás quase branco */
 }
 
 .agendar-day.available {
-  background: #7a3db8;
+  background: #b378d3; /* lilás médio */
   color: #ffffff;
 }
 
 .agendar-day.available:hover {
-  background: #5e2ea8;
+  background: #9d4bca; /* lilás escuro */
 }
 
 .agendar-day.empty {
@@ -395,7 +406,7 @@ h3 {
 
 .agendar-days-list li {
   padding: 10px;
-  background: #ffffff;
+  background: #ffffff; /* branco */
   border-radius: 5px;
   margin: 5px 0;
   cursor: pointer;
@@ -403,7 +414,7 @@ h3 {
 }
 
 .agendar-days-list li:hover {
-  background: #e0b3ff;
+  background: #f8e4ff; /* lilás quase branco */
 }
 
 .agendar-hours-list {
@@ -415,26 +426,26 @@ h3 {
 }
 
 .agendar-hours-list li {
-  background: #ffffff;
+  background: #ffffff; /* branco */
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  border: 1px solid #7a3db8;
+  border: 1px solid #b378d3; /* lilás médio */
 }
 
 .agendar-hours-list li:hover {
-  background: #e0b3ff;
+  background: #f8e4ff; /* lilás quase branco */
 }
 
 .selected-hour {
-  background: #7a3db8 !important;
-  color: white;
+  background: #b378d3 !important; /* lilás médio */
+  color: #ffffff;
 }
 
 .agendar-button {
-  background: #7a3db8;
-  color: white;
+  background: #b378d3; /* lilás médio */
+  color: #ffffff;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -444,24 +455,21 @@ h3 {
 }
 
 .agendar-button:hover {
-  background: #5e2ea8;
-}
-/*css do sign*/
-* {
-  box-sizing: border-box;
+  background: #9d4bca; /* lilás escuro */
 }
 
+/* CSS do sign-in */
 .auth-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #fafafa;
+  background-color: #e3b9f1; /* lilás suave  ou adicionar uma imagem*/ 
   padding: 40px;
 }
 .auth-form {
-  background-color: #fff;
+  background-color: #ffffff; /* branco */
   border-radius: 15px;
   padding: 40px;
   width: 100%;
@@ -469,25 +477,23 @@ h3 {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-
 .auth-form:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .auth-form h2 {
   font-size: 26px;
-  color: #9e66d1;
+  color: #9d4bca; /* lilás escuro */
   text-align: center;
   margin-bottom: 25px;
   font-weight: 600;
 }
 
-
 .auth-form label {
   display: block;
   font-size: 18px;
   margin-bottom: 8px;
-  color: #555;
+  color: #000000; /* preto */
   font-weight: 500;
 }
 
@@ -497,23 +503,23 @@ h3 {
   padding: 12px 15px;
   margin-bottom: 20px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #b378d3; /* lilás médio */
   font-size: 16px;
-  background-color: #f9f9f9;
+  background-color: #ffffff; /* branco */
   box-sizing: border-box;
   transition: border-color 0.3s ease-in-out;
 }
 
 .auth-form input:focus,
 .auth-form select:focus {
-  border-color: #9e66d1;
+  border-color: #9d4bca; /* lilás escuro */
   outline: none;
 }
 
 .auth-form input[type="submit"],
 .auth-form button {
-  background-color: #9e66d1;
-  color: white;
+  background-color: #9d4bca; /* lilás escuro */
+  color: #ffffff;
   border: none;
   padding: 14px 25px;
   font-size: 16px;
@@ -526,7 +532,7 @@ h3 {
 
 .auth-form input[type="submit"]:hover,
 .auth-form button:hover {
-  background-color: #7a48a6;
+  background-color: #b378d3; /* lilás médio */
   transform: translateY(-2px);
 }
 
@@ -534,11 +540,11 @@ h3 {
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
-  color: #777;
+  color: #000000; /* preto */
 }
 
 .auth-form a {
-  color: #9e66d1;
+  color: #9d4bca; /* lilás escuro */
   text-decoration: none;
   font-weight: 600;
 }
@@ -548,47 +554,38 @@ h3 {
 }
 
 .auth-form select {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  background-color: #ffffff; /* branco */
+  border: 1px solid #b378d3; /* lilás médio */
   padding: 12px 15px;
 }
 .auth-form p.auth-switch {
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
-  color: #777;
+  color: #000000; /* preto */
   width: 100%;
-}
-
-.auth-form p.auth-switch {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-  color: #777;
-  width: 100%; /* Garante que o link se ajuste à largura do formulário */
 }
 
 .auth-form p.auth-switch a:hover {
   text-decoration: underline;
 }
 
-
-
+/* Avaliação */
 .avaliar-container {
   width: 80%;
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
-  background: #c38de9;
+  background: #e3b9f1; /* lilás suave */
   border-radius: 10px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  color: white;
+  color: #ffffff;
 }
 
 .avaliar-container h2 {
   font-size: 24px;
-  color: #ffffff;
+  color: #9d4bca; /* lilás escuro */
   margin-bottom: 20px;
 }
 
@@ -607,11 +604,11 @@ h3 {
 }
 
 .estrelas .estrela.selected {
-  color: #f39c12;
+  color: #c39fdb; /* lilás vibrante */
 }
 
 .estrelas .estrela:hover {
-  color: #f39c12;
+  color: #c39fdb; /* lilás vibrante */
 }
 
 .informacoes-avaliacao {
@@ -620,7 +617,7 @@ h3 {
 
 .informacoes-avaliacao p {
   font-size: 18px;
-  color: #ffffff;
+  color: #9d4bca; /* lilás escuro */
 }
 
 .opiniao-container {
@@ -631,7 +628,7 @@ h3 {
   width: 100%;
   height: 100px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #b378d3; /* lilás médio */
   border-radius: 5px;
   font-size: 16px;
   resize: none;
@@ -640,8 +637,8 @@ h3 {
 }
 
 .botao-avaliacao {
-  background-color: #e3bbff;
-  color: white;
+  background-color: #9d4bca; /* lilás escuro */
+  color: #ffffff;
   border: none;
   padding: 12px 20px;
   font-size: 16px;
@@ -655,7 +652,7 @@ h3 {
 }
 
 .botao-avaliacao:hover {
-  background-color: #d1a4f1;
+  background-color: #b378d3; /* lilás médio */
   transform: scale(1.05);
 }
 
@@ -663,7 +660,7 @@ h3 {
   margin: 40px auto;
   max-width: 600px;
   padding: 20px;
-  background-color: #f9e6fd;
+  background-color: #f8e4ff; /* lilás quase branco */
   border-radius: 10px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -671,7 +668,7 @@ h3 {
 
 .payment-success h2 {
   font-size: 24px;
-  color: #9e66d1;
+  color: #9d4bca; /* lilás escuro */
   margin-bottom: 20px;
 }
 
@@ -681,7 +678,7 @@ h3 {
 
 .payment-form .form-group label {
   font-size: 16px;
-  color: #555;
+  color: #000000; /* preto */
   display: block;
   margin-bottom: 5px;
 }
@@ -690,14 +687,14 @@ h3 {
   width: 100%;
   padding: 12px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #b378d3; /* lilás médio */
   font-size: 16px;
   box-sizing: border-box;
 }
 
 .payment-form button {
-  background-color: #9e66d1;
-  color: white;
+  background-color: #9d4bca; /* lilás escuro */
+  color: #ffffff;
   border: none;
   padding: 12px 20px;
   font-size: 16px;
@@ -709,27 +706,34 @@ h3 {
 }
 
 .payment-form button:hover {
-  background-color: #7a48a6;
+  background-color: #b378d3; /* lilás médio */
 }
 
 .home-container {
   text-align: center;
-    font-family: Arial, sans-serif;
-    
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* branco */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh;
+  max-height: fit-content;
+  justify-content: center;
 }
 
 .banner {
-    display: flex;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    background-color: #bf7eee;
-    box-shadow: 5px 0px 45px rgba(66, 6, 88, 0.542);
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    padding: 20px;
+  display: flex;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  background-color:#e3b9f1; /* lilás suave */
+  box-shadow: 5px 0px 45px rgba(66, 6, 88, 0.542);
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  padding: 20px;
 }
 
 .conteudo {
@@ -744,30 +748,14 @@ h3 {
 
 .home-container {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color: #ffffff; /* branco */
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   min-height: 100vh;
-  max-height: fit-content;
-  justify-content: center;
-}
-
-.banner {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.home-container {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  padding: 0px;
-  margin-left: 80px;
-  background-color: #ffffff;
-
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .banner {
@@ -776,7 +764,7 @@ h3 {
 }
 
 .welcome-box {
-  color: white;
+  color: #ffffff;
   transition: opacity 0.5s ease;
 }
 
@@ -792,7 +780,7 @@ h3 {
 
 .consultas-box {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -804,11 +792,11 @@ h3 {
 }
 
 .consultas-container {
-  background-color: #ffffff;
+  background-color: #ffffff; /* branco */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 300px; 
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -816,7 +804,7 @@ h3 {
 
 .consultas-container h2 {
   font-size: 24px;
-  color: #333;
+  color: #9d4bca; /* lilás escuro */
   margin-bottom: 15px;
 }
 
@@ -827,9 +815,9 @@ h3 {
 
 .consultas-container li {
   font-size: 18px;
-  color: #555;
+  color: #000000; /* preto */
   padding: 8px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #b378d3;
 }
 
 .consultas-container li:last-child {
@@ -838,27 +826,27 @@ h3 {
 
 .home-container {
   font-family: Arial, sans-serif;
-  background-color: #ffffff; 
+  background-color: #ffffff; /* branco */
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   min-height: 100vh;
-  justify-content: flex-start; 
-  align-items: center; 
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .banner {
-  background-color: #b372c7; 
+  background-color: #9d4bca; /* lilás escuro */
   padding: 20px;
   text-align: center;
-  width: 100%; 
+  width: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .welcome-box {
-  color: white;
+  color: #ffffff;
   transition: opacity 0.5s ease;
 }
 
@@ -873,7 +861,7 @@ h3 {
 }
 
 .consultas-marcadas {
-  background-color: #bf7eee;
+  background-color: #9d4bca; /* lilás escuro */
   padding: 30px;
   border-radius: 12px;
 }
@@ -881,7 +869,7 @@ h3 {
 .consultas-marcadas h2 {
   font-size: 34px;
   color: #ffffff;
-  background-color: #d1a4f1;
+  background-color: #b378d3; /* lilás médio */
   padding: 15px;
   border-radius: 12px;
 }
@@ -893,7 +881,7 @@ h3 {
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: #ffffff; /* branco */
   padding: 30px;
   border-radius: 12px;
   box-shadow: 10px 6px 12px rgba(0, 0, 0, 0.1);
@@ -902,20 +890,20 @@ h3 {
 
 .card h3 {
   font-size: 26px;
-  color: #333;
+  color: #9d4bca; /* lilás escuro */
   margin-bottom: 15px;
 }
 
 .card p {
   font-size: 18px;
-  color: #555;
+  color: #000000; /* preto */
   word-wrap: break-word;
   white-space: normal;
-  overflow-wrap: break-word; 
+  overflow-wrap: break-word;
 }
 
 .card-extended {
-  background-color: #ffffff;
+  background-color: #ffffff; /* branco */
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -924,19 +912,19 @@ h3 {
 
 .card-extended h3 {
   font-size: 26px;
-  color: #333;
+  color: #9d4bca; /* lilás escuro */
   margin-bottom: 15px;
 }
 
 .card-extended p {
   font-size: 18px;
-  color: #555;
+  color: #000000; /* preto */
 }
 
 .efetuar-pagamento-container {
   max-width: 500px;
   margin: 50px auto;
-  background: #bf7eee;
+  background: #e3b9f1; /* lilás suave */
   padding: 20px 30px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -945,7 +933,7 @@ h3 {
 }
 
 .efetuar-pagamento-container h2 {
-  color:  #ffffff;
+  color: #ffffff;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -966,7 +954,7 @@ h3 {
 .form-group select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #b378d3; /* lilás médio */
   border-radius: 8px;
   box-sizing: border-box;
   transition: all 0.3s ease;
@@ -975,20 +963,20 @@ h3 {
 
 .form-group input[type="text"]:focus,
 .form-group select:focus {
-  border-color: #7a3db8;
-  box-shadow: 0 0 8px rgba(122, 61, 184, 0.2);
+  border-color: #9d4bca; /* lilás escuro */
+  box-shadow: 0 0 8px rgba(122, 66, 200, 0.2);
   outline: none;
 }
 .form-group textarea.input-field {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #b378d3;
   border-radius: 8px;
-  height: 40px; 
+  height: 40px;
 }
 .botao-enviar {
-  background: #7a3db8;
-  color: white;
+  background: #c39fdb; /* lilás vibrante */
+  color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 25px;
@@ -998,12 +986,12 @@ h3 {
 }
 
 .botao-enviar:hover {
-  background: #5e2ea8;
+  background: #b378d3; /* lilás médio */
 }
 
 .botao-avaliacao {
-  background:  #7a3db8;
-  color: white;
+  background: #c39fdb; /* lilás vibrante */
+  color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 25px;
@@ -1013,18 +1001,10 @@ h3 {
 }
 
 .botao-avaliacao:hover {
-  background:  #8f60be;
+  background: #b378d3; /* lilás médio */
 }
 
-.efetuar-pagamento-container a {
-  text-decoration: none;
-}
-
-.agendar-container {
-  padding: 20px;
-}
-
-/*css do agendar*/
+/* CSS do agendar */
 .agendar-calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -1039,16 +1019,16 @@ h3 {
   text-align: center;
   padding: 10px;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid #b378d3;
 }
 
 .agendar-calendar-day.available {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #9d4bca;
+  color: #ffffff;
 }
 
 .agendar-calendar-day.empty {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .agendar-day-checkbox {
@@ -1059,9 +1039,9 @@ h3 {
   display: block;
 }
 
-/*css do editar conta*/
+/* CSS do editar conta */
 .editar-conta-container {
-  background-color: #bf7eee;
+  background-color: #9d4bca;
   padding: 40px;
   max-width: 600px;
   margin: 50px auto;
@@ -1070,47 +1050,43 @@ h3 {
   font-family: Arial, sans-serif;
 }
 
-/* Estilo para o título */
 .editar-conta-container h2 {
   text-align: center;
-  font-size: 32px; 
+  font-size: 32px;
   color: #ffffff;
   margin-bottom: 30px;
 }
 
-/* Estilo para os rótulos */
 .editar-conta-container label {
   font-size: 18px;
-  color: #ffffff; /* Alterei o tom para o roxo do site */
+  color: #ffffff;
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
-  text-align: left; /* Garante que o texto fique alinhado à esquerda */
+  text-align: left;
 }
 
-/* Estilo para os campos de input */
 .editar-conta-container input {
   width: 100%;
-  padding: 14px; /* Aumentei um pouco o padding para maior conforto */
+  padding: 14px;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #b378d3;
   border-radius: 8px;
   font-size: 16px;
-  color: #333;
+  color: #000000;
   transition: all 0.3s ease-in-out;
 }
 
 .editar-conta-container input:focus {
-  border-color: #5e2a84; /* Ajustei a cor do foco para o tom roxo */
+  border-color: #9d4bca;
   outline: none;
-  box-shadow: 0 0 8px rgba(94, 42, 132, 0.3);
+  box-shadow: 0 0 8px rgba(122, 66, 200, 0.3);
 }
 
-/* Estilo para o botão de envio */
 .editar-conta-container button {
-  background-color: #5e2a84; 
-  color: #fff;
-  padding: 14px 25px; 
+  background-color: #9d4bca;
+  color: #ffffff;
+  padding: 14px 25px;
   border: none;
   border-radius: 8px;
   width: 100%;
@@ -1120,32 +1096,27 @@ h3 {
 }
 
 .editar-conta-container button:hover {
-  background-color: #4c1d6d; 
+  background-color: #b378d3;
 }
 
-/* Layout do formulário */
 .editar-conta-container form {
   display: flex;
   flex-direction: column;
 }
 
-/* Remover quebras de linha do formulário */
 .editar-conta-container form br {
   display: none;
 }
 
-/* Ajuste no espaçamento de inputs */
 .editar-conta-container input {
-  margin-bottom: 15px; /* Melhor controle de espaço */
+  margin-bottom: 15px;
 }
 
-/* Estilo para os inputs de forma geral */
 .editar-conta-container input::placeholder {
-  color: #888; /* Cor mais suave para placeholders */
+  color: #888;
   font-weight: normal;
 }
 
-/**/
 .agendar-selected-day-info {
   margin-top: 20px;
 }
@@ -1163,7 +1134,7 @@ h3 {
 }
 
 .notificacoes-container {
-  background-color: #c38de9;
+  background-color: #e3b9f1;
   padding: 30px;
   border-radius: 12px;
   max-width: 600px;
@@ -1174,7 +1145,7 @@ h3 {
 
 .notificacoes-container h1 {
   font-size: 30px;
-  color: #5e2a84;
+  color: #9d4bca;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -1186,22 +1157,22 @@ h3 {
 }
 
 .notificacoes-container li {
-  background-color: #fff;
-  border-radius: 12px;  
+  background-color: #ffffff;
+  border-radius: 12px;
   padding: 25px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   font-size: 20px;
-  color: #444;
+  color: #000000;
   position: relative;
   opacity: 0;
   animation: slideIn 0.5s ease-out forwards;
 }
 
 .notificacoes-container li:nth-child(1) {
-  animation-delay: 0s; 
+  animation-delay: 0s;
 }
 
 .notificacoes-container li:nth-child(2) {
@@ -1209,7 +1180,7 @@ h3 {
 }
 
 .notificacoes-container li:nth-child(3) {
-  animation-delay: 0.4s; 
+  animation-delay: 0.4s;
 }
 
 .notificacoes-container li:nth-child(4) {
@@ -1221,15 +1192,15 @@ h3 {
 }
 
 .notificacoes-container li:nth-child(6) {
-  animation-delay: 1s; 
+  animation-delay: 1s;
 }
 
 .notificacoes-container li:nth-child(7) {
-  animation-delay: 1.2s; 
+  animation-delay: 1.2s;
 }
 
 .notificacoes-container li:nth-child(8) {
-  animation-delay: 1.4s; 
+  animation-delay: 1.4s;
 }
 
 .notificacoes-container li .notificacao-icone {
@@ -1257,13 +1228,12 @@ h3 {
   }
 }
 
-/*css agendamento*/
-
+/* Agendamento */
 .visualizar-agendamentos-container {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background: rgb(192, 134, 222);
+  background: #e3b9f1;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
@@ -1271,7 +1241,7 @@ h3 {
 
 .titulo-principal {
   text-align: center;
-  color: #333;
+  color: #9d4bca;
   font-size: 2em;
   padding: 20px 0;
 }
@@ -1292,7 +1262,7 @@ h3 {
 
 .dia-consulta {
   background: #ffffff;
-  color: rgb(167, 79, 207); /*cor da letra dia*/
+  color: #c39fdb; /* lilás vibrante */
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -1301,12 +1271,12 @@ h3 {
 }
 
 .dia-consulta:hover {
-  background: rgb(253, 253, 253);
+  background: #ffffff;
 }
 
 .detalhes-agendamento {
   margin-top: 30px;
-  background: rgb(255, 255, 255);
+  background: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1327,28 +1297,28 @@ h3 {
 .detalhes-agendamento td {
   padding: 10px;
   text-align: left;
-  border-bottom: 1px solid #995ab8;
+  border-bottom: 1px solid #c39fdb; /* lilás vibrante */
 }
 
 .detalhes-agendamento th {
-  background:  #bd80e0;
-  color: white;
+  background: #b378d3; /* lilás médio */
+  color: #ffffff;
 }
 
 .detalhes-agendamento tr:hover {
-  background: #f1f1f1;
+  background: #f8e4ff; /* lilás quase branco */
 }
 
-.bloquinho{
-  background-color: white;
+.bloquinho {
+  background-color: #ffffff;
   color: #000000;
   border-radius: 5px;
   list-style: none;
   margin: 5px;
 }
 
-.bloquinho2{
-  background-color: white;
+.bloquinho2 {
+  background-color: #ffffff;
   color: #000000;
   border-radius: 5px;
   list-style: none;
@@ -1356,22 +1326,22 @@ h3 {
   text-align: left;
 }
 
-.blocotexto{
+.blocotexto {
   font-size: 20px;
   margin: 10px;
 }
 
-.bloco{
+.bloco {
   margin: 20px;
   padding: 10px;
   font-size: 15px;
   border-radius: 5px;
-  background-color: white;
-  border-color: #ffffff00;
+  background-color: #ffffff;
+  border-color: transparent;
 }
 
-.lista-horas{
-  display:flex;
+.lista-horas {
+  display: flex;
   flex-wrap: wrap;
   row-gap: 10px;
   column-gap: 10px;
@@ -1381,7 +1351,7 @@ h3 {
   max-width: 400px;
   margin: 20px auto;
   padding: 20px;
-  background: #c38de9;
+  background: #e3b9f1;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -1399,13 +1369,14 @@ h3 {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #1f1f1f;
+  color: #000000;
 }
 
-.editar-massagista-container input, textarea {
+.editar-massagista-container input,
+.editar-massagista-container textarea {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #b378d3;
   border-radius: 4px;
   font-size: 14px;
 }
@@ -1428,5 +1399,5 @@ h3 {
 }
 
 .btn-submit:hover {
-  background: #b5b5b5;
+  background: #b378d3;
 }
