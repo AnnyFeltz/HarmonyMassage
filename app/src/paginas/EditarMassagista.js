@@ -25,6 +25,7 @@ function EditarMassagista() {
     return (
         <div className="editar-massagista-container">
             <h2>Editar Dados do Massagista</h2>
+            <br />
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="nome">Nome</label>
@@ -64,16 +65,12 @@ function EditarMassagista() {
 
                 <div className="form-group">
                     <label htmlFor="disponibilidade">Disponibilidade</label>
-                    <textarea
-                        id="disponibilidade"
-                        name="disponibilidade"
-                        value={formData.disponibilidade}
-                        onChange={handleChange}
-                        placeholder="Escreva sua disponibilidade"
-                    />
+                    <div className='centralizar'>
+                        <a className="botao-disponibilidade" href='/editar-agenda'>Editar Agenda do massagista</a>
+                    </div>
                 </div>
 
-                <button type="submit" className="btn-submit">Salvar Alterações</button>
+                <button type="submit" className="botao-enviar">Salvar Alterações</button>
             </form>
         </div>
     );

@@ -33,6 +33,7 @@ function Relatorio() {
                     <tr><td>Beatriz Ramos</td><td>Massagem com Aromaterapia</td><td>R$ 175,00</td><td>25/02/2025</td><td>10:30</td></tr>
                 </tbody>  
             </table>
+            <br/>
             <button className="botao-enviar">Enviar</button>
         </div>
     );

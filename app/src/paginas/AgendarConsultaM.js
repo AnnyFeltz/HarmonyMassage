@@ -88,7 +88,7 @@ function AgendarConsulta() {
           </div>
         </div>
 
-        <p>Dias disponíveis para agendamento:</p>
+        <p className="p-titulo">Dias disponíveis para agendamento:</p>
         <ul className="agendar-days-list">
           {Object.keys(scheduleData).map((day) => (
             <li key={day} onClick={() => handleDayClick(parseInt(day))}>
@@ -100,12 +100,12 @@ function AgendarConsulta() {
         {/* Exibe os dados do dia selecionado */}
         {selectedDay && (
           <div className=".agendar-selected-day-info">
-            <h2>Detalhes do Agendamento</h2>
+            <h2 className="p-titulo">Detalhes do Agendamento</h2>
             <p>Você selecionou o dia: {selectedDay < 10 ? `0${selectedDay}` : selectedDay}</p>
 
             {/* Formulário para digitar o nome e CPF do cliente */}
             <div>
-              <h4>Dados do Cliente:</h4>
+              <h4 className="p-titulo">Dados do Cliente:</h4>
               <input className="blocotexto"
                 type="text"
                 placeholder="Nome do Cliente"
@@ -123,7 +123,8 @@ function AgendarConsulta() {
             {/* Exibe os horários se um cliente for inserido */}
             {clientName && clientCpf && (
               <div>
-                <h4>Selecione o Horário:</h4>
+                <br />
+                <h4 className="p-titulo">Selecione o Horário:</h4>
                 <ul>
                   {scheduleData[selectedDay].horarios.map((hora, index) => (
                     <li className="bloquinho"
@@ -140,14 +141,14 @@ function AgendarConsulta() {
                 </ul>
               </div>
             )}
-
+            <br />
             {selectedTime && clientName && clientCpf && (
               <div>
                 <div className="bloquinho2"  >
-                  <p><strong>Cliente:</strong> {clientName}</p>
-                  <p><strong>CPF:</strong> {clientCpf}</p>
-                  <p><strong>Massagem:</strong> {scheduleData[selectedDay]?.massage}</p>
-                  <p><strong>Horário:</strong> {selectedTime}</p>
+                  <p><strong>Cliente:</strong> <span>{clientName}</span></p>
+                  <p><strong>CPF:</strong><span>{clientCpf}</span> </p>
+                  <p><strong>Massagem:</strong><span>{scheduleData[selectedDay]?.massage}</span> </p>
+                  <p><strong>Horário:</strong> <span>{selectedTime}</span></p>
                 </div>
                 <button className="agendar-button">Confirmar Agendamento</button>
               </div>

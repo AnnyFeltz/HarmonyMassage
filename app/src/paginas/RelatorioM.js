@@ -30,6 +30,8 @@ function RelatorioM() {
                     <tr><td>Laura Ramos</td><td>R$ 180,00</td></tr>
                 </tbody>  
             </table>
+            <br/>
+
             <button className="botao-enviar">Enviar</button>
         </div>
     );

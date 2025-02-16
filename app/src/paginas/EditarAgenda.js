@@ -77,7 +77,7 @@ function EditarAgenda() {
   const renderAvailableHoursForMonth = () => {
     return (
       <div>
-        <h2>Horários Disponíveis para o Mês:</h2>
+        <h2 className="p-titulo">Horários Disponíveis para o Mês:</h2>
         <div className="lista-horas">
           {Object.keys(availableHours).map((hour) => (
             <label key={hour} className="agendar-hour-checkbox">
@@ -118,21 +118,25 @@ function EditarAgenda() {
         </button>
 
         {isEditingDays && (
-          <div className="lista-horas">
+          <div>
+            <h2 className="p-titulo">Horários Disponíveis para o Mês:</h2>
 
-            {Array.from({ length: 31 }, (_, index) => {
-              const day = index + 1;
-              return (
-                <label key={day} className="day-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={availableDays.includes(day)}
-                    onChange={() => toggleDayAvailability(day)}
-                  />
-                  Dia {day}
-                </label>
-              );
-            })}
+            <div className="lista-horas">
+
+              {Array.from({ length: 31 }, (_, index) => {
+                const day = index + 1;
+                return (
+                  <label key={day} className="day-checkbox">
+                    <input
+                      type="checkbox"
+                      checked={availableDays.includes(day)}
+                      onChange={() => toggleDayAvailability(day)}
+                    />
+                    Dia {day}
+                  </label>
+                );
+              })}
+            </div>
           </div>
         )}
 

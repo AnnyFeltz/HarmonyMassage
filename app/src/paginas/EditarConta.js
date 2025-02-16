@@ -50,7 +50,7 @@ function EditarConta() {
                         placeholder="Digite seu telefone"  // Adicionado o placeholder
                     />
                 </label>
-                <button type="submit">Salvar Alterações</button>
+                <button type="submit" className="botao-enviar" >Salvar Alterações</button>
             </form>
         </div>
     );
