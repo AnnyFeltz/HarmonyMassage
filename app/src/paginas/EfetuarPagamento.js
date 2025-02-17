@@ -12,7 +12,7 @@ function EfetuarPagamento() {
         <div className="efetuar-pagamento-container">
             {pagamentoEfetuado ? (
                 <div>
-                    <h2>Pagamento efetuado com sucesso!</h2> 
+                    <h2 className='p-titulo'>Pagamento efetuado com sucesso!</h2> 
                     <a href="/avaliar">
                         <button className="botao-avaliacao">
                             Avaliar Consulta

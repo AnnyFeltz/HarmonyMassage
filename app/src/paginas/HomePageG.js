@@ -8,8 +8,10 @@ function HomePageM() {
       {welcomeVisible && (
         <div className="banner">
           <div className={`welcome-box ${welcomeVisible ? "visible" : "hidden"}`}>
-            <h1>Bem-vindo ao Harmony Massagem!</h1>
-            <p>Confira seus agendamentos de massagem.</p>
+            <div className="p-titulo">
+              <h1>Bem-vindo ao Harmony Massagem!</h1>
+              <p>Confira seus agendamentos de massagem.</p>
+            </div>
             <button className="botao-enviar" onClick={() => setWelcomeVisible(false)}>OK</button>
           </div>
         </div>

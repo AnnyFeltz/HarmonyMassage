@@ -24,7 +24,7 @@ function EditarMassagista() {
 
     return (
         <div className="editar-massagista-container">
-            <h2>Editar Dados do Massagista</h2>
+            <h2 className='p-titulo'>Editar Dados do Massagista</h2>
             <br />
             <form onSubmit={handleSubmit}>
                 <div className="form-group">

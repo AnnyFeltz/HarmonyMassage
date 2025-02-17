@@ -92,7 +92,7 @@ function AgendarConsulta() {
 
   return (
     <div className="agendar-container">
-      <h2>Janeiro de 2025</h2>
+      <h2 className="p-titulo">Janeiro de 2025</h2>
       <div className="agendar-calendar">
         <div className="agendar-grid">
           <div className="agendar-day-name">Dom</div>
@@ -120,7 +120,7 @@ function AgendarConsulta() {
       {selectedDay && (
         <div className="selected-day-info">
           <h3 className="p-titulo">Detalhes do Agendamento</h3>
-          <p>Você selecionou o dia: {selectedDay < 10 ? `0${selectedDay}` : selectedDay}</p>
+          <p className="bloquinho"><span>Você selecionou o dia:{selectedDay < 10 ? `0${selectedDay}` : selectedDay}</span> </p>
           <br />
 
           {/* Se houver profissionais para o dia selecionado, exibe a lista de seleção */}

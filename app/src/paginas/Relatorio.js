@@ -3,7 +3,7 @@ import React from 'react';
 function Relatorio() {
     return (
         <div className="relatorio-container">
-            <h2>Relatório de Agendamentos</h2>
+            <h2 className='p-titulo'>Relatório de Agendamentos</h2>
             <table>
                 <thead>
                     <tr>

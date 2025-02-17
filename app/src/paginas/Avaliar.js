@@ -9,7 +9,7 @@ function Avaliar() {
 
     return (
         <div className="avaliar-container">
-            <h2>Avaliar a Consulta</h2>
+            <h2 className="p-titulo">Avaliar a Consulta</h2>
 
             {/* Estrelas no topo */}
             <div className="form-group">
@@ -28,7 +28,7 @@ function Avaliar() {
 
             {/* Campos para Profissional e Tipo de Massagem */}
             <div className="form-group">
-                <label>Profissional:</label>
+                <label className="p-titulo">Profissional:</label>
                 <input
                     type="text"
                     placeholder="Nome do profissional"
@@ -37,7 +37,7 @@ function Avaliar() {
             </div>
 
             <div className="form-group">
-                <label>Tipo de Massagem:</label>
+                <label className="p-titulo">Tipo de Massagem:</label>
                 <input
                     type="text"
                     placeholder="Ex: Massagem Relaxante"
@@ -47,7 +47,7 @@ function Avaliar() {
 
             {/* Campo para Opinião */}
             <div className="form-group">
-                <label>Opinião:</label>
+                <label className="p-titulo">Opinião:</label>
                 <textarea
                     placeholder="Deixe sua opinião sobre a consulta"
                     className="input-field"

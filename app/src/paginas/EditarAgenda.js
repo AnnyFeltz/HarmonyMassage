@@ -98,7 +98,7 @@ function EditarAgenda() {
 
   return (
     <div className="agendar-container">
-      <h2>Janeiro de 2025</h2>
+      <h2 className="p-titulo">Janeiro de 2025</h2>
       <div className="agendar-calendar">
         <div className="agendar-grid">
           <div className="agendar-day-name">Dom</div>

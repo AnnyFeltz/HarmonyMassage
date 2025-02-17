@@ -28,7 +28,7 @@ const VisualizarAgendamentos = () => {
 
   return (
     <div className="visualizar-agendamentos-container">
-      <h1 className="titulo-principal">Meus Agendamentos</h1>
+      <h1 className="p-titulo">Meus Agendamentos</h1><br/>
       <div className="subtitulo">Dias com consultas:</div>
       <div className="dias-consulta-container">
         {Object.keys(scheduleData).map((day) => (
